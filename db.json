@@ -114,8 +114,6 @@
     }
   ],
   "AddToOrder": [
-    //placeholder namn
-    //quantity som en attribut eller bara ha flera objekt?
     {
       "id": 1,
       "productid": 1,
