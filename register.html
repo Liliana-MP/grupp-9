@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/login.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body class="container">
     <div class="form text-center">
       <h1>Registrering</h1>
       <br />
-      <form>
+      <form onsubmit="checkForm()">
         <label class="reg" for="firstname">Förnamn:</label>
         <input id="firstname" type="text" placeholder="Förnamn" /><br />
         <label class="reg" for="lastname">Efternamn:</label>
@@ -22,14 +23,22 @@
         <label class="reg" for="mail">E-post:</label>
         <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
         <label class="reg" for="password">Lösenord:</label>
-        <input type="password" placeholder="Lösenord" /><br />
-        <input
-          type="submit"
-          class="btn btn-secondary"
-          value="Skapa konto"
-          style="padding-left: 6rem; padding-right: 6rem"
-        />
+        <input id="password" type="password" placeholder="Lösenord" /><br />
+        <input type="submit" class="btn btn-secondary" value="Skapa konto" style="padding-left: 6rem; padding-right: 6rem"/>
       </form>
     </div>
+    <script>
+        function checkForm(){
+        let $firstname = $("#firstname").val();
+        let $lastname = $("#lastname").val();
+        let $adress = $("#adress").val();
+        let $mail = $("#mail").val();
+        let $password = $("#password").val();
+
+        if ($firstname == "" || $lastname == "" || $adress == "" || $mail == "" || $password == "") {
+            alert("Fill in every field")
+        }
+        }
+    </script>
   </body>
 </html>
