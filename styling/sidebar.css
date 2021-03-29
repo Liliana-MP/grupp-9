@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: rgb(230, 230, 230);
+  transition: all 0.3s;
+}
+
+sidebar .active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(187, 186, 186);
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  display: block;
+  font-size: 1.1rem;
+  color: rgb(148, 145, 145);
+}
+
+#sidebar ul li a:hover {
+  color: #446e9b;
+  text-decoration: none;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
