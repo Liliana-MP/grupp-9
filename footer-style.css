@@ -2,3 +2,8 @@
   width: 2rem;
   height: auto;
 }
+
+.delivery-img {
+  max-width: 100px;
+  width: 100%;
+}
