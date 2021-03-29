@@ -1,0 +1,9 @@
+.reg{
+    width: 100px;
+    display: inline-block;
+    text-align: left;
+}
+
+.text-small{
+    font-size: small;
+}
