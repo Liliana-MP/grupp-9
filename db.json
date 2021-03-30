@@ -49,6 +49,16 @@
       "quantity": 6,
       "description": "chips som är goda",
       "price": 20.99
+    },
+    {
+      "id": 4,
+      "name": "Potatis",
+      "companyid": 3,
+      "categoryid": 4,
+      "image": "https://picsum.photos/200",
+      "quantity": 6,
+      "description": "God potatis",
+      "price": 20.99
     }
   ],
   "city": [
