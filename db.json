@@ -67,8 +67,8 @@
       "firstname": "Admin",
       "lastname": "",
       "cityid": 1,
-      "adress": "Jensgatan 13",
-      "email": "jens.jens@jens.com",
+      "adress": "Hakimgatan 13",
+      "email": "admin@hakim.com",
       "password": "admin",
       "phonenumber": "1111111111",
       "isadmin": true
@@ -85,7 +85,7 @@
       "isadmin": false
     },
     {
-      "id": 2,
+      "id": 3,
       "firstname": "Anders",
       "lastname": "Karlsson",
       "cityid": 2,
