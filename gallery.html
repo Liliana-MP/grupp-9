@@ -1,109 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"
-  ></script>
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
-    <link rel="stylesheet" href="styling/gallery.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styling/gallery.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Hakims livs</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor03"
-          aria-controls="navbarColor03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarColor03">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Startsida </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="contact-us.html"
-                >Om oss <span class="sr-only">(current)</span></a
-              >
-            </li>
-          </ul>
-  
-          <form id="search-form" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Sök" />
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-              Sök
-            </button>
-          </form>
-  
-          <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-            <a
-              href="login.html"
-              id="login-btn"
-              class="btn btn-outline-primary my-2 my-sm-0"
-              >Logga in</a
-            >
-            <a
-              href="cart.html"
-              id="cart-btn"
-              class="btn btn-outline-primary my-2 my-sm-0"
-              >Varukorg</a
-            >
-          </form>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="#">Hakims livs</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor03"
+        aria-controls="navbarColor03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Startsida </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Om oss</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="gallery.html"
+              >Bildgalleri <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+
+        <form id="search-form" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Sök" />
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Sök
+          </button>
+        </form>
+
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
+          <a
+            href="login.html"
+            id="login-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Logga in</a
+          >
+          <a
+            href="cart.html"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Varukorg</a
+          >
+        </form>
+      </div>
+    </nav>
 
     <div id="tt" class="container">
-        <div class="row text-center">
-            <table class="table">
-                    <thead>
-                        <tr>
-                            <th colspan="4">
-                                <h1>Hakim Livs bildgalleri</h1>
-                            </th>
-                        </tr>
-                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="4"><h3>Klicka på en bild för att göra den större</h3></td>
-                        </tr>
-            
-                        <tr>
-                            <td><a href="images/Shop-gallery/butik1.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik1.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik2.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik2.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik3.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik3.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik4.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik4.jpeg"></a></td>
-                        </tr>
-            
-                        <tr>
-                            <td><a href="images/Shop-gallery/butik5.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik5.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik6.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik6.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik7.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik7.jpeg"></a></td>
-                            <td><a href="images/Shop-gallery/butik8.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik8.jpeg"></a></td>
-                        </tr>
-                    </tbody>
-            </table>
-        </div>
-       
-    </div>
+      <div class="row text-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="4">
+                <h1>Hakim Livs bildgalleri</h1>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4">
+                <h3>Klicka på en bild för att göra den större</h3>
+              </td>
+            </tr>
 
-</body>
+            <tr>
+              <td>
+                <a href="images/Shop-gallery/butik1.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik1.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik2.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik2.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik3.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik3.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik4.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik4.jpeg"
+                /></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="images/Shop-gallery/butik5.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik5.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik6.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik6.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik7.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik7.jpeg"
+                /></a>
+              </td>
+              <td>
+                <a href="images/Shop-gallery/butik8.jpeg" target="_blank"
+                  ><img class="shop" src="images/Shop-gallery/butik8.jpeg"
+                /></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
