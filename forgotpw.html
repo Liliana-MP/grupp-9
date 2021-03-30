@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling/spacelab.css">
+    <link rel="stylesheet" href="styling/login.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="scripts/login.js"></script>
+    <title>Document</title>
+</head>
+<body class="container">
+ 
+    <div class="form text-center">
+        <h1>Ange din mailadress</h1><br>
+        <form onsubmit="checkEmail(this); return false;">
+        <label style="width: 70px; display: inline-block; text-align: left;" for="mail">E-post:</label>
+        <input id="e-mail" type="email" placeholder="Exempel@hakim.se" /><br />
+        <small class="font-weight-bold" style=" margin-bottom: 1rem; margin-top: 0rem; color: #ff0000;" id="alert"></small> <br>
+        <input type="submit" class="btn btn-secondary" value="Återställ lösenord" style="padding-left: 3.8rem; padding-right: 3.8rem">
+        </form>
+    </div>
+</body>
+</html>
