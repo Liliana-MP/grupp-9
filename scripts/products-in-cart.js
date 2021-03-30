@@ -1,3 +1,5 @@
+let total = 0
+
 fetch("db.json").then(function(response) {
    
     response.json().then(function(data){
@@ -24,7 +26,8 @@ fetch("db.json").then(function(response) {
             </tr>
           </tbody>`
 
-          
+            total = total + parseFloat(element.price)
+            document.getElementById("test").innerHTML = `${total} SEK`
          
         })
     })
