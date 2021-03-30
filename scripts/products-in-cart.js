@@ -27,7 +27,7 @@ fetch("db.json").then(function(response) {
           </tbody>`
 
             total = total + parseFloat(element.price)
-            document.getElementById("test").innerHTML = total
+            document.getElementById("test").innerHTML = `${total} SEK`
          
         })
     })
