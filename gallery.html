@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styling/spacelab.css">
-    <link rel="stylesheet" href="styling/login.css">
     <title>Document</title>
     <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -19,6 +17,7 @@
   ></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
+    <link rel="stylesheet" href="styling/gallery.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -71,37 +70,40 @@
         </div>
       </nav>
 
-    <div class="container">
-        <div class="form text-center" style="margin-top: 1.5rem;">
-            <h2>Kontakta Hakim livs</h2>
-            <p>
-                <b>Hakim livs är en liten butik som drivs av Hakim. Då vi dessvärre är i en pandemi <br>
-                vill Hakim livs underlätta för alla sina underbara kunder. Hakim livs har börjat med <br>
-                utkörning till sina kunder. För att kunna göra en beställning och få varorna hemkörda <br>
-                så måste ni registera er antingen här på sidan eller om ni vill komma förbi vår butik. <br>
-                Besök gärna vårt bildgalleri för att se hur vi har det hos oss. <a href="gallery.html">Bildgalleri</a>
-                </b><br>
-            </p>
-
-            <p>
-                <h3>Hitta  hit:</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8158.640062564429!2d18.078116908607495!3d59.25512151814774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f799542b9dbf1%3A0xc445b322108d1735!2sH%C3%B6kar%C3%A4ngen%2C%20Farsta%20distrikt%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1617055924599!5m2!1ssv!2sse" width="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </p><br>
-
-            <p>
-                <h3>Kontakta oss här</h3>
-                <form>
-                    <label style="width: 130px; display: inline-block; text-align: left;" for="mail">Ange din e-post:</label>
-                    <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
-                    <label style="padding-top: 1rem;" for="message">Meddelande:</label><br>
-                    <textarea id="message" cols="36" rows="10"></textarea><br>
-                    <input type="submit" class="btn btn-secondary" value="Skicka" style="padding-left: 8.4rem; padding-right: 8.4rem">
-                </form>
-            </p>
+    <div id="tt" class="container">
+        <div class="row text-center">
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                <h1>Hakim Livs bildgalleri</h1>
+                            </th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4"><h3>Klicka på en bild för att göra den större</h3></td>
+                        </tr>
             
-
-
+                        <tr>
+                            <td><a href="images/Shop-gallery/butik1.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik1.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik2.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik2.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik3.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik3.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik4.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik4.jpeg"></a></td>
+                        </tr>
+            
+                        <tr>
+                            <td><a href="images/Shop-gallery/butik5.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik5.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik6.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik6.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik7.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik7.jpeg"></a></td>
+                            <td><a href="images/Shop-gallery/butik8.jpeg" target="_blank"><img class="shop" src="images/Shop-gallery/butik8.jpeg"></a></td>
+                        </tr>
+                    </tbody>
+            </table>
         </div>
+       
     </div>
+
 </body>
 </html>
