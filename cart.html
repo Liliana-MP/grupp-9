@@ -59,9 +59,12 @@
             class="btn btn-outline-primary my-2 my-sm-0"
             >Logga in</a
           >
-          <a href="#" id="cart-btn" class="btn btn-outline-primary my-2 my-sm-0"
-            >Varukorg <span class="sr-only">(current)</span></a
-          >
+          <a
+            href="#"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0 active"
+            >Varukorg <span class="sr-only"></span
+          ></a>
         </form>
       </div>
     </nav>
@@ -80,7 +83,15 @@
         <tr class="table-active">
           <th scope="row">Oboy</th>
           <td>200kr</td>
-          <td>1</td>
+          <td>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              +
+            </button>
+            1
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              -
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-outline-danger">
               Ta bort
@@ -93,7 +104,15 @@
         <tr class="table-active">
           <th scope="row">Mjölk</th>
           <td>80kr</td>
-          <td>4</td>
+          <td>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              +
+            </button>
+            4
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              -
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-outline-danger">
               Ta bort
@@ -102,6 +121,12 @@
         </tr>
       </tbody>
     </table>
+    <div class="card border-primary mb-3" style="max-width: 20rem">
+      <div class="card-header">Total</div>
+      <div class="card-body">
+        <h4 class="card-title">280kr</h4>
+      </div>
+    </div>
     <button type="button" class="btn btn-outline-success">
       Köp din beställning
     </button>
