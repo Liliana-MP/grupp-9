@@ -6,7 +6,7 @@ async function checkIfUserExist(form) {
   var responce = await fetch(resource)
   var data = await responce.json()
   if (validateNotEmpty() && validateEmailBox()) {
-    let user = data.User.find(item => item.email === inputEmail)
+    let user = data.user.find(item => item.email === inputEmail)
     if (user !== undefined) {
       if (checkPassword(user)) {
         form.submit()
