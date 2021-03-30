@@ -88,45 +88,12 @@
         <!-- Ändra action till rätt senare -->
             <form name="login-form" action="index.html" onsubmit="checkIfUserExist(this); return false;">
                 <h1>Logga in</h1> <br>
-                <label 
-                class="reg" 
-                for="e-mail">
-                E-post:
-              </label>
-
-                <input
-                 type="email" 
-                 name="e-mail" 
-                 id="e-mail" 
-                 placeholder="Exempel@hakim.se"> 
-                 <br>
-
-                <label 
-                class="reg" for="password" 
-                style="margin-bottom: 0rem;">
-                Lösenord:
-              </label>
-
-                <input type="password" 
-                name="password" id="password" 
-                placeholder="Lösenord" 
-                style="margin-bottom: 0rem;"> 
-                <br>
-
-                <small 
-                class="font-weight-bold" 
-                style=" margin-bottom: 1rem; margin-top: 0rem; color: #ff0000;" 
-                id="alert">
-              </small> 
-                <br>
-
-                <input 
-                style="padding-right: 7.3rem; padding-left: 7.3rem;" 
-                class="btn btn-secondary" 
-                ype="submit" 
-                name="login" 
-                id="login-btn" 
-                value="Logga in">
+                <label class="reg" for="e-mail">E-post:</label>
+                <input type="email" name="e-mail" id="e-mail" placeholder="Exempel@hakim.se"> <br>
+                <label class="reg" for="password" style="margin-bottom: 0rem;">Lösenord:</label>
+                <input type="password" name="password" id="password" placeholder="Lösenord" style="margin-bottom: 0rem;"> <br>
+                <small class="font-weight-bold" style=" margin-bottom: 1rem; margin-top: 0rem; color: #ff0000;" id="alert"></small> <br>
+                <input style="padding-right: 7.3rem; padding-left: 7.3rem;" class="btn btn-secondary" type="submit" name="login" id="login-btn" value="Logga in">
                 
             </form>
             <a class="text-small text-left" style="margin-right: 1.5rem;" href="forgotpw.html">Glömt lösenord?</a>
