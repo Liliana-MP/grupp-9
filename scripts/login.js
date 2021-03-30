@@ -15,12 +15,20 @@ async function checkIfUserExist(form) {
   } else errorTxt.text("* Fyll i alla fälten")
 }
 
-function checkEmail(user) {
+async function checkEmail(form) {
   let inputEmail = $("#e-mail").val()
-  if (inputEmail === user.email)
-    return true;
-  else
-    return false;
+  const errorTxt = $("#alert")
+  var responce = await fetch(resource)
+  var data = await responce.json()
+  if (validateMailNotEmpty()) {
+    if(validateEmailBox()){
+    let user = data.user.find(item => item.email === inputEmail)
+    if (user !== undefined) {
+      form.submit();
+      alert("Ett mail har skickats till din inbox")
+    } else errorTxt.text("* Användaren finns ej")
+   } else errorTxt.text("* Fel e-post")
+  } else errorTxt.text("* Fyll i alla fälten")
 }
 
 function checkPassword(user) {
@@ -29,6 +37,14 @@ function checkPassword(user) {
     return true;
   else
     return false;
+}
+
+function validateMailNotEmpty() {
+  let inputEmail = $("#e-mail").val()
+  if (inputEmail == "")
+    return false;
+  else
+    return true;
 }
 
 function validateNotEmpty() {
