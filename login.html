@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logga in</title>
+</head>
+<body>
+
+</body>
+</html>
   <head>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/login.css" />
@@ -17,6 +27,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/login.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
   </head>
@@ -74,48 +85,20 @@
       </div>
     </nav>
     <div class="text-center col-md-12">
-      <!-- Ändra action till rätte senare -->
-      <form action="index.html" name="login-form">
-        <h1>Logga in bre!</h1>
-        <br />
-        <label class="reg" for="e-mail">E-post:</label>
-        <input
-          type="email"
-          name="e-mail"
-          id="e-mail"
-          placeholder="Exempel@hakim.se"
-        />
-        <br />
-        <label class="reg" for="password">Lösenord:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Lösenord"
-        />
-        <br />
-        <input
-          style="padding-right: 7.3rem; padding-left: 7.3rem"
-          class="btn btn-secondary"
-          type="submit"
-          name="login"
-          id="login-btn"
-          value="Logga in"
-        />
-      </form>
-      <a
-        class="text-small text-left"
-        style="margin-right: 1.5rem"
-        href="forgotpw.html"
-        >Glömt lösenord?</a
-      >
-
-      <a
-        class="text-small text-right"
-        style="margin-left: 1.5rem"
-        href="register.html"
-        >Ny kund</a
-      >
-    </div>
+        <!-- Ändra action till rätt senare -->
+            <form name="login-form" action="index.html" onsubmit="checkIfUserExist(this); return false;">
+                <h1>Logga in</h1> <br>
+                <label class="reg" for="e-mail">E-post:</label>
+                <input type="email" name="e-mail" id="e-mail" placeholder="Exempel@hakim.se"> <br>
+                <label class="reg" for="password" style="margin-bottom: 0rem;">Lösenord:</label>
+                <input type="password" name="password" id="password" placeholder="Lösenord" style="margin-bottom: 0rem;"> <br>
+                <small class="font-weight-bold" style=" margin-bottom: 1rem; margin-top: 0rem; color: #ff0000;" id="alert"></small> <br>
+                <input style="padding-right: 7.3rem; padding-left: 7.3rem;" class="btn btn-secondary" type="submit" name="login" id="login-btn" value="Logga in">
+                
+            </form>
+            <a class="text-small text-left" style="margin-right: 1.5rem;" href="forgotpw.html">Glömt lösenord?</a>
+            
+            <a class="text-small text-right" style="margin-left: 1.5rem;" href="register.html">Ny kund</a>
+        </div>
   </body>
 </html>
