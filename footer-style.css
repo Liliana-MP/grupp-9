@@ -11,3 +11,20 @@
 img{
   margin-bottom: 2rem;
 }
+
+.postnord{
+  padding-left: 0.5rem;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-text{
+/* padding-left: 2rem; */
+width: 100%;
+height:auto;
+
+}
