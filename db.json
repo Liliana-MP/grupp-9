@@ -1,5 +1,5 @@
 {
-  "Category": [
+  "category": [
     {
       "id": 1,
       "name": "dryck"
@@ -9,7 +9,7 @@
       "name": "snacks"
     }
   ],
-  "Company": [
+  "company": [
     {
       "id": 1,
       "name": "Coca cola company"
@@ -19,7 +19,7 @@
       "name": "Pringles company"
     }
   ],
-  "Product": [
+  "product": [
     {
       "id": 1,
       "name": "Cola Zero",
@@ -49,9 +49,19 @@
       "quantity": 6,
       "description": "chips som är goda",
       "price": 20.99
+    },
+    {
+      "id": 4,
+      "name": "Potatis",
+      "companyid": 3,
+      "categoryid": 4,
+      "image": "https://picsum.photos/200",
+      "quantity": 6,
+      "description": "God potatis",
+      "price": 20.99
     }
   ],
-  "City": [
+  "city": [
     {
       "id": 1,
       "name": "Stockholm"
@@ -61,14 +71,14 @@
       "name": "Uppsala"
     }
   ],
-  "User": [
+  "user": [
     {
       "id": 1,
       "firstname": "Admin",
       "lastname": "",
       "cityid": 1,
-      "adress": "Jensgatan 13",
-      "email": "jens.jens@jens.com",
+      "adress": "Hakimgatan 13",
+      "email": "admin@hakim.com",
       "password": "admin",
       "phonenumber": "1111111111",
       "isadmin": true
@@ -85,7 +95,7 @@
       "isadmin": false
     },
     {
-      "id": 2,
+      "id": 3,
       "firstname": "Anders",
       "lastname": "Karlsson",
       "cityid": 2,
@@ -96,7 +106,7 @@
       "isadmin": false
     }
   ],
-  "Order": [
+  "order": [
     {
       "id": 1,
       "userid": 2,
@@ -113,29 +123,33 @@
       "date": "2021-03-04"
     }
   ],
-  "AddToOrder": [
+  "addToOrder": [
     {
       "id": 1,
       "productid": 1,
-      "orderid": 1
+      "orderid": 1,
+      "quantity": 3
     },
     {
       "id": 2,
       "productid": 1,
-      "orderid": 2
+      "orderid": 2,
+      "quantity": 2
     },
     {
       "id": 3,
       "productid": 2,
-      "orderid": 2
+      "orderid": 2,
+      "quantity": 1
     },
     {
       "id": 4,
       "productid": 1,
-      "orderid": 3
+      "orderid": 3,
+      "quantity": 4
     }
   ],
-  "OutOfStock": [
+  "outOfStock": [
     {
       "id": 1,
       "productid": 1,

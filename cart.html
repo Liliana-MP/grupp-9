@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hakims livs</title>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -40,10 +40,11 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Startsida </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="about-us.html"
-              >Om oss <span class="sr-only">(current)</span></a
-            >
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Om oss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Bildgalleri </a>
           </li>
         </ul>
 
@@ -61,11 +62,34 @@
             class="btn btn-outline-primary my-2 my-sm-0"
             >Logga in</a
           >
-          <a href="#" id="cart-btn" class="btn btn-outline-primary my-2 my-sm-0"
-            >Varukorg</a
-          >
+          <a
+            href="#"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0 active"
+            >Varukorg <span class="sr-only"></span
+          ></a>
         </form>
       </div>
     </nav>
+    <h1>Varukorg</h1>
+
+    <table class="table table-hover" id="product-in-cart">
+      <thead>
+        <tr>
+          <th scope="col">Produkt</th>
+          <th scope="col">Pris</th>
+          <th scope="col">Antal</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+    </table>
+    <div class="card border-primary mb-3" style="max-width: 20rem">
+      <div class="card-header">Total</div>
+      <div class="card-body" id="test"></div>
+    </div>
+    <button type="button" class="btn btn-outline-success">
+      Köp din beställning
+    </button>
+    <script src="scripts/products-in-cart.js"></script>
   </body>
 </html>

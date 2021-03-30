@@ -19,9 +19,13 @@
 
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
+    <link rel="stylesheet" href="styling/sidebar.css" />
+    <link rel="stylesheet" href="styling/all-products.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -44,7 +48,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about-us.html">Om oss</a>
+            <a class="nav-link" href="contact-us.html">Om oss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Bildgalleri </a>
           </li>
         </ul>
 
@@ -62,11 +69,28 @@
             class="btn btn-outline-primary my-2 my-sm-0"
             >Logga in</a
           >
-          <a href="#" id="cart-btn" class="btn btn-outline-primary my-2 my-sm-0"
+          <a
+            href="cart.html"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
             >Varukorg</a
           >
         </form>
       </div>
     </nav>
+
+    <div class="sidebar">
+      <a class="active" href="index.html">Alla produkter</a>
+      <a href="#news">Skafferi</a>
+      <a href="#contact">Bröd</a>
+      <a href="#about">Dryck</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+      <div class="row" id="row"></div>
+    </div>
+
+    <script src="scripts/all-prodcuts.js"></script>
   </body>
 </html>
