@@ -1,5 +1,5 @@
 {
-  "Category": [
+  "category": [
     {
       "id": 1,
       "name": "dryck"
@@ -9,7 +9,7 @@
       "name": "snacks"
     }
   ],
-  "Company": [
+  "company": [
     {
       "id": 1,
       "name": "Coca cola company"
@@ -19,7 +19,7 @@
       "name": "Pringles company"
     }
   ],
-  "Product": [
+  "product": [
     {
       "id": 1,
       "name": "Cola Zero",
@@ -51,7 +51,7 @@
       "price": 20.99
     }
   ],
-  "City": [
+  "city": [
     {
       "id": 1,
       "name": "Stockholm"
@@ -61,7 +61,7 @@
       "name": "Uppsala"
     }
   ],
-  "User": [
+  "user": [
     {
       "id": 1,
       "firstname": "Admin",
@@ -96,7 +96,7 @@
       "isadmin": false
     }
   ],
-  "Order": [
+  "order": [
     {
       "id": 1,
       "userid": 2,
@@ -113,7 +113,7 @@
       "date": "2021-03-04"
     }
   ],
-  "AddToOrder": [
+  "addToOrder": [
     {
       "id": 1,
       "productid": 1,
@@ -139,7 +139,7 @@
       "quantity": 4
     }
   ],
-  "OutOfStock": [
+  "outOfStock": [
     {
       "id": 1,
       "productid": 1,
