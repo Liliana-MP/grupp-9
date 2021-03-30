@@ -19,12 +19,9 @@
 
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
-    <link rel="stylesheet" href="styling/sidebar.css" />
   </head>
   <body>
-    <!-- Navbar -->
-
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -40,11 +37,8 @@
 
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Startsida
-              <span class="sr-only">(current)</span>
-            </a>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Startsida </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact-us.html">Om oss</a>
@@ -66,26 +60,76 @@
             >Logga in</a
           >
           <a
-            href="cart.html"
+            href="#"
             id="cart-btn"
-            class="btn btn-outline-primary my-2 my-sm-0"
-            >Varukorg</a
-          >
+            class="btn btn-outline-primary my-2 my-sm-0 active"
+            >Varukorg <span class="sr-only"></span
+          ></a>
         </form>
       </div>
     </nav>
+    <h1>Varukorg</h1>
 
-    <div class="sidebar">
-      <a class="active" href="#home">Alla produkter</a>
-      <a href="#news">Skafferi</a>
-      <a href="#contact">Bröd</a>
-      <a href="#about">Dryck</a>
-    </div>
+    <table class="table table-hover" id="product-in-cart">
+      <thead>
+        <tr>
+          <th scope="col">Produkt</th>
+          <th scope="col">Pris</th>
+          <th scope="col">Antal</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          <th scope="row">Oboy</th>
+          <td>200kr</td>
+          <td>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              -
+            </button>
+            1
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              +
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-danger">
+              Ta bort
+            </button>
+          </td>
+        </tr>
+      </tbody>
 
-    <!-- Page content -->
-    <div class="content">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo obcaecati
-      rem harum at delectus, quidem nesciunt quae natus ut facilis?
+      <tbody>
+        <tr class="table-active">
+          <th scope="row">Mjölk</th>
+          <td>80kr</td>
+          <td>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              -
+            </button>
+            4
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              +
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-danger">
+              Ta bort
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card border-primary mb-3" style="max-width: 20rem">
+      <div class="card-header">Total</div>
+      <div class="card-body">
+        <h4 class="card-title">280kr</h4>
+      </div>
     </div>
+    <button type="button" class="btn btn-outline-success">
+      Köp din beställning
+    </button>
+    <script src="test.js"></script>
   </body>
 </html>
