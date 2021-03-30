@@ -1,58 +1,55 @@
 let resource = "./db.json"
 
-function checkIfUserExist(){
-  console.log(validateEmailBox());
-  console.log(validateNotEmpty());
-  if(validateNotEmpty()){
-  if(validateEmailBox()){ 
-    fetch(resource)
-    .then(resp => resp.json())
-    .then(data => data.User.forEach(element => {
-      console.log(element.email);
-      if (checkIfUserExist1(element)){
-        alert("loggas in bre")
-        return true
-      }
-      
-    }))
-    .catch(err => console.error(err))
-    
-  }}
-  else {
-    alert("failersa")
-  return false}
+async function checkIfUserExist(form) {
+  let inputEmail = $("#e-mail").val()
+  const errorTxt = $("#alert")
+  var responce = await fetch(resource)
+  var data = await responce.json()
+  if (validateNotEmpty() && validateEmailBox()) {
+    let user = data.User.find(item => item.email === inputEmail)
+    if (user !== undefined) {
+      if (checkPassword(user)) {
+        form.submit()
+      } else errorTxt.text("* Epost och lösenord matchar inte")
+    } else errorTxt.text("* Epost och lösenord matchar inte")
+  } else errorTxt.text("* Fyll i alla fälten")
 }
 
-function checkIfUserExist1(user){
+function checkEmail(user) {
   let inputEmail = $("#e-mail").val()
-  if (inputEmail == user.email)
-  return true;
+  if (inputEmail === user.email)
+    return true;
   else
-  return false;
+    return false;
 }
 
-  
-   
-function validateNotEmpty(){
+function checkPassword(user) {
+  let inputPassword = $("#password").val()
+  if (inputPassword === user.password)
+    return true;
+  else
+    return false;
+}
+
+function validateNotEmpty() {
   let inputEmail = $("#e-mail").val()
-  let inputPassword = $("#password").val() 
+  let inputPassword = $("#password").val()
+  if (inputPassword == "" || inputEmail == "")
+    return false;
+  else
+    return true;
 
-  if(inputPassword == "" || inputEmail == ""){
-  return false;
-}else{
-  return true;
 }
-}
 
-function validateEmailBox(){
-    let inputEmail = $("#e-mail").val()
+function validateEmailBox() {
+  let inputEmail = $("#e-mail").val()
 
-    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 
-    if(inputEmail.match(pattern)){
-      return true;
-    } else {
-      return (false);
-    }
+  if (inputEmail.match(pattern)) {
+    return true;
+  } else {
+    return (false);
   }
+}
