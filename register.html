@@ -11,7 +11,7 @@
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
-    <title>Document</title>
+    <title>Hakims livs</title>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -24,6 +24,7 @@
     ></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
+    <link rel="stylesheet" href="styling/footer-style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -90,14 +91,19 @@
         <label class="reg" for="adress">Adress:</label>
         <input id="adress" type="text" placeholder="Adress" /><br />
         <label class="reg" for="postNr">Postnummer:</label>
-        <input id="postNr" type="number" placeholder="Postnummer"><br>
+        <input id="postNr" type="number" placeholder="Postnummer" /><br />
         <label class="reg" for="ort">Ort:</label>
-        <input id="ort" type="text" placeholder="Ort"><br>
+        <input id="ort" type="text" placeholder="Ort" /><br />
         <label class="reg" for="mail">E-post:</label>
         <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
         <label class="reg" for="password">Lösenord:</label>
         <input id="password" type="password" placeholder="Lösenord" /><br />
-        <small class="font-weight-bold" style=" margin-bottom: 1rem; margin-top: 0rem; color: #ff0000;" id="alert"></small> <br>
+        <small
+          class="font-weight-bold"
+          style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+          id="alert"
+        ></small>
+        <br />
         <input
           type="submit"
           class="btn btn-secondary"
@@ -106,13 +112,88 @@
         />
       </form>
     </div>
+
+    <div>
+      <br>
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+        <!-- Footer Elements -->
+        <div class="container">
+          <hr />
+          <br />
+          <div id="test" class="test">
+            <div class="klarna">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/Klarna-Payment-Ny-logga-juni-2019-1024x491.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="budbee">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/budbee.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="postnord">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/postnord.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div class="row">
+          <div class="mx-auto d-block">
+            <h5 class="text-uppercase font-weight-bold">
+              <a href="kontaktsida.html">Kontakta oss</a>
+            </h5>
+            <img
+              class="footer-img"
+              src="images/phone.png"
+              alt="pictureOfPhone"
+            />
+            <br />
+            <p id="kontakt-text">
+              08-123456
+              <br />
+              (Vardagar 08 - 22)
+            </p>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+          © 2021 Hakim Enterprises Ab
+        </div>
+      </footer>
+    </div>
+
     <script>
       function checkForm(form) {
         let $firstname = $("#firstname").val();
         let $lastname = $("#lastname").val();
         let $adress = $("#adress").val();
-        let $postNr = $("#postNr").val()
-        let $ort = $("#ort").val()
+        let $postNr = $("#postNr").val();
+        let $ort = $("#ort").val();
         let $mail = $("#mail").val();
         let $password = $("#password").val();
 
@@ -125,10 +206,9 @@
           $mail == "" ||
           $password == ""
         ) {
-          $("#alert").text("* Fyll i alla fälten")
-        }
-        else{
-          form.submit()
+          $("#alert").text("* Fyll i alla fälten");
+        } else {
+          form.submit();
         }
       }
     </script>

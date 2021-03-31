@@ -10,6 +10,7 @@
 /* Hide the images by default */
 .mySlides {
   display: none;
+  margin-left: 22%;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -24,11 +25,11 @@
   position: absolute;
   top: 40%;
   width: auto;
-  padding: 16px;
+  padding: 10px;
   margin-top: -50px;
-  color: white;
+  color: black;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 40px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
@@ -56,11 +57,13 @@
 }
 
 /* Container for image text */
-.caption-container {
+#caption-for-image {
   text-align: center;
   background-color: #222;
-  padding: 2px 16px;
+  padding: 2px 10px;
   color: white;
+  width: 54.6%;
+  margin-left: 22%;
 }
 
 .row:after {

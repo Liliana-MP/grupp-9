@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styling/spacelab.css" />
-    <link rel="stylesheet" href="styling/login.css" />
+    <title>Hakims livs</title>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -16,14 +16,17 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-    <script src="scripts/login.js"></script>
-    <title>Hakims livs</title>
+
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
-    <link rel="stylesheet" href="styling/footer-style.css">
+    <link rel="stylesheet" href="styling/sidebar.css" />
+    <link rel="stylesheet" href="styling/all-products.css" />
+    <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
+    <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
   </head>
-
   <body>
+    <!-- Navbar -->
+
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
@@ -40,10 +43,10 @@
 
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html"
+          <li class="nav-item active">
+            <a id="0" class="category nav-link" href="index.html"
               >Startsida
-              <span class="sr-only"></span>
+              <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -65,7 +68,7 @@
           <a
             href="login.html"
             id="login-btn"
-            class="btn btn-outline-primary my-2 my-sm-0 active"
+            class="btn btn-outline-primary my-2 my-sm-0"
             >Logga in</a
           >
           <a
@@ -77,38 +80,13 @@
         </form>
       </div>
     </nav>
-    <div class="content container">
-      <div class="form text-center">
-        <h1>Ange din mailadress</h1>
-        <br />
-        <form onsubmit="checkEmail(this); return false;">
-          <label
-            style="width: 70px; display: inline-block; text-align: left"
-            for="e-mail"
-            >E-post:</label
-          >
-          <input
-            id="e-mail"
-            type="email"
-            placeholder="Exempel@hakim.se"
-          /><br />
-          <small
-            class="font-weight-bold"
-            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-            id="alert"
-          ></small>
-          <br />
-          <input
-            type="submit"
-            class="btn btn-secondary"
-            value="Återställ lösenord"
-            style="padding-left: 3.8rem; padding-right: 3.8rem"
-          />
-        </form>
-      </div>
-    </div>
-    <div>
-      <br>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <!-- Page content -->
+    <div class="content">
+      <div class="row" id="row"></div>
+
       <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
         <!-- Footer Elements -->
         <div class="container">
@@ -180,5 +158,8 @@
         </div>
       </footer>
     </div>
+
+    <script src="scripts/all-prodcuts.js"></script>
+    <script src="scripts/category.js"></script>
   </body>
 </html>
