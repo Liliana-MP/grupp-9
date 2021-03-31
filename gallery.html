@@ -73,36 +73,62 @@
       </div>
     </nav>
     <!-- Container for the image gallery -->
+    <h1 class="form text-center">Bildgalleri</h1>
+    <br />
     <div class="container">
       <!-- Full-width images with number text -->
       <div class="mySlides">
         <div class="numbertext">1 / 6</div>
-        <img src="images/Shop-gallery/butik1.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik1.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <div class="mySlides">
         <div class="numbertext">2 / 6</div>
-        <img src="images/Shop-gallery/butik2.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik2.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <div class="mySlides">
         <div class="numbertext">3 / 6</div>
-        <img src="images/Shop-gallery/butik3.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik3.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <div class="mySlides">
         <div class="numbertext">4 / 6</div>
-        <img src="images/Shop-gallery/butik4.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik4.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <div class="mySlides">
         <div class="numbertext">5 / 6</div>
-        <img src="images/Shop-gallery/butik5.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik5.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <div class="mySlides">
         <div class="numbertext">6 / 6</div>
-        <img src="images/Shop-gallery/butik6.jpeg" style="width: 70%" />
+        <img
+          src="images/Shop-gallery/butik6.jpeg"
+          style="width: 70%"
+          alt="bild på butik"
+        />
       </div>
 
       <!-- Next and previous buttons -->
@@ -110,9 +136,10 @@
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
       <!-- Image text -->
-      <div class="caption-container">
+      <div class="caption-container form text-center">
         <p id="caption"></p>
       </div>
+      <br />
 
       <!-- Thumbnail images -->
       <div class="row">
@@ -122,7 +149,7 @@
             src="images/Shop-gallery/butik1.jpeg"
             style="width: 100%"
             onclick="currentSlide(1)"
-            alt="The Woods"
+            alt="Grönsaker"
           />
         </div>
         <div class="column">
@@ -131,7 +158,7 @@
             src="images/Shop-gallery/butik2.jpeg"
             style="width: 100%"
             onclick="currentSlide(2)"
-            alt="Cinque Terre"
+            alt="Grönkål"
           />
         </div>
         <div class="column">
@@ -140,7 +167,7 @@
             src="images/Shop-gallery/butik3.jpeg"
             style="width: 100%"
             onclick="currentSlide(3)"
-            alt="Mountains and fjords"
+            alt="Frukt och grönt"
           />
         </div>
         <div class="column">
@@ -149,7 +176,7 @@
             src="images/Shop-gallery/butik4.jpeg"
             style="width: 100%"
             onclick="currentSlide(4)"
-            alt="Northern Lights"
+            alt="Bakelser"
           />
         </div>
         <div class="column">
@@ -158,7 +185,7 @@
             src="images/Shop-gallery/butik5.jpeg"
             style="width: 100%"
             onclick="currentSlide(5)"
-            alt="Nature and sunrise"
+            alt="Nöjd kund"
           />
         </div>
         <div class="column">
@@ -167,46 +194,11 @@
             src="images/Shop-gallery/butik6.jpeg"
             style="width: 100%"
             onclick="currentSlide(6)"
-            alt="Snowy Mountains"
+            alt="Goya burkar"
           />
         </div>
       </div>
     </div>
-    <script>
-      var slideIndex = 1;
-      showSlides(slideIndex);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
-      }
-    </script>
+    <script src="scripts/photo-gallery.js"></script>
   </body>
 </html>
