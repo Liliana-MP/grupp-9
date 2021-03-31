@@ -13,7 +13,7 @@ fetch("db.json").then(function(response) {
   }
   
     response.json().then(function(data){
-      let row;
+      
       // Renderar ut produkter
         data.product.forEach(element => {
 
@@ -34,7 +34,7 @@ fetch("db.json").then(function(response) {
             </div>
           </div>`
           objectArray.push(element);
-          console.log(objectArray);
+          
         }else{
          
           if(getCategoryId == element.categoryid){
