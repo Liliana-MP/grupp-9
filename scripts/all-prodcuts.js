@@ -68,9 +68,9 @@ fetch("db.json").then(function(response) {
       $sidebar.append($row)
         data.category.forEach(element => {
           if(element.id == getCategoryId){
-            
+            $active = "active";
           } else {
-            
+            $active = "";
           }
           $row = `<a id="${element.id}" class="category ${$active}" href="category.html">${element.name}</a>`
          $sidebar.append($row)
