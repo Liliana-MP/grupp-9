@@ -60,19 +60,19 @@ fetch("db.json").then(function(response) {
 
         const $sidebar =  $("#sidebar")
         let $row;
+        let $active = "";
         // Renderar ut kategorier
-        if(getCategoryId == 0){
-        $row = `<a id="0" class="category active" href="index.html">Alla produkter</a>`
-      } else {
-        $row = `<a id="0" class="category" href="index.html">Alla produkter</a>`
-      }
+        if(getCategoryId == 0)
+        $active = "active";
+      $row = `<a id="0" class="category ${$active}" href="index.html">Alla produkter</a>`
       $sidebar.append($row)
         data.category.forEach(element => {
           if(element.id == getCategoryId){
-            $row =`<a id="${element.id}" class="category active" href="category.html">${element.name}</a>`
+            
           } else {
-            $row = `<a id="${element.id}" class="category" href="category.html">${element.name}</a>`
+            
           }
+          $row = `<a id="${element.id}" class="category ${$active}" href="category.html">${element.name}</a>`
          $sidebar.append($row)
         })
 
