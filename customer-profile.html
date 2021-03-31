@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hakims livs</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="styling/spacelab.css" />
+    <link rel="stylesheet" href="styling/navbar-style.css" />
+    <link rel="stylesheet" href="styling/sidebar.css" />
+    <link rel="stylesheet" href="styling/all-products.css" />
+    <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
+    <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Hakims livs</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor03"
+        aria-controls="navbarColor03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"
+              >Startsida
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Om oss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Bildgalleri </a>
+          </li>
+        </ul>
+
+        <form id="search-form" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Sök" />
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Sök
+          </button>
+        </form>
+
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
+          <a
+            href="login.html"
+            id="login-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Logga in</a
+          >
+          <a
+            href="cart.html"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Varukorg</a
+          >
+        </form>
+      </div>
+    </nav>
+
+    <div class="sidebar">
+        <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+      <a class="active" href="customer-profile.html">Profil</a>
+      <a href="customer-orders.html"> Beställningar</a>
+      <a href="customer-discounts.html">Erbjudanden</a>
+      <a href="delete-profile.html">Ta bort profil</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+      <!-- <div class="row" id="row"></div> -->
+      <br>
+      <div class="customer-form">
+        <div class="py-5 text-center">
+          <h2>Personuppgifter</h2>
+        </div>
+        <div class="col">
+          <h4 class="mb-3">Leveransaddress</h4>
+          <form id="orderForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="fName" class="form-label">Förnamn</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fName"
+                  placeholder="Kalle"
+                />
+              </div>
+              <div class="col-sm-6">
+                <label for="lName" class="form-label">Efternamn</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lName"
+                  placeholder="Svensson"
+                />
+              </div>
+              <div class="col-12">
+                <label for="tNumber" class="form-label">Telefonnummer </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tNumber"
+                  placeholder="0731234567"
+                  onKeyPress="if(this.value.length==10) return false;"
+                />
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="kalle@example.com"
+                />
+              </div>
+              <div class="col-12">
+                <label for="adrs" class="form-label">Adress</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adrs"
+                  placeholder="Sveavägen 1"
+                />
+              </div>
+              <div class="col-12">
+                <label for="zip" class="form-label">Postnummer</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="zip"
+                  placeholder="11157"
+                  onKeyPress="if(this.value.length==5) return false;"
+                />
+              </div>
+              <div class="col-12">
+                <label for="city" class="form-label">Stad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Stockholm"
+                />
+                <div class="invalid-feedback">Ange stad.</div>
+              </div>
+            </div>
+            <br />
+            <button class="btn btn-success" id="btn-submit" type="button">
+              Slutför
+            </button>
+            <button class="btn btn-danger" id="btn-cancel-order" type="button">
+              Avbryt
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+        <!-- Footer Elements -->
+        <div class="container">
+          <hr />
+          <br />
+          <div id="test" class="test">
+            <div class="klarna">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/Klarna-Payment-Ny-logga-juni-2019-1024x491.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="budbee">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/budbee.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="postnord">
+              <div class="view overlay z-depth-1-half">
+                <img
+                  src="images/postnord.png"
+                  class="img-fluid delivery-img"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div class="row">
+          <div class="mx-auto d-block">
+            <h5 class="text-uppercase font-weight-bold">
+              <a href="kontaktsida.html">Kontakta oss</a>
+            </h5>
+            <img
+              class="footer-img"
+              src="images/phone.png"
+              alt="pictureOfPhone"
+            />
+            <br />
+            <p id="kontakt-text">
+              08-123456
+              <br />
+              (Vardagar 08 - 22)
+            </p>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+          © 2021 Hakim Enterprises Ab
+        </div>
+      </footer>
+    </div>
+
+    <script src="scripts/all-prodcuts.js"></script>
+  </body>
+</html>
