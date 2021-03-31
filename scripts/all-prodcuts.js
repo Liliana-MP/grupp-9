@@ -1,8 +1,8 @@
 const objectArray = [];
-var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || []
+var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || [];
 
 const getCategoryId = sessionStorage.getItem("category") || 0;
-console.log(getCategoryId);
+
 
 
 fetch("db.json").then(function(response) {
@@ -21,9 +21,9 @@ fetch("db.json").then(function(response) {
             
             document.getElementById("row").innerHTML += ` <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="card border-dark mb-3" style="max-width: 20rem">
-            <div class="card-header">${element.name}</div>
+            <div class="card-header" onclick="renderProduct(${element.id})" >${element.name}</div>
             <div class="card-body">
-                <img class="img-thumbnail" src=${element.image} alt="bild på ${element.name}">
+                <img class="img-thumbnail" onclick="renderProduct(${element.id})" src=${element.image} alt="bild på ${element.name}" >
                 
                 <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
               <p class="product-price">
@@ -54,23 +54,26 @@ fetch("db.json").then(function(response) {
           objectArray.push(element);
           }
         } 
-        
+       
         })
+        sessionStorage.setItem("products",JSON.stringify(objectArray))
 
+        const $sidebar =  $("#sidebar")
+        let $row;
         // Renderar ut kategorier
         if(getCategoryId == 0){
-        document.getElementById("sidebar").innerHTML += `<a id="0" class="category active" href="index.html">Alla produkter</a>`
+        $row = `<a id="0" class="category active" href="index.html">Alla produkter</a>`
       } else {
-        document.getElementById("sidebar").innerHTML += `<a id="0" class="category" href="index.html">Alla produkter</a>`
+        $row = `<a id="0" class="category" href="index.html">Alla produkter</a>`
       }
+      $sidebar.append($row)
         data.category.forEach(element => {
           if(element.id == getCategoryId){
-            document.getElementById("sidebar").innerHTML += `
-            <a id="${element.id}" class="category active" href="category.html">${element.name}</a>`
+            $row =`<a id="${element.id}" class="category active" href="category.html">${element.name}</a>`
           } else {
-            document.getElementById("sidebar").innerHTML += `
-            <a id="${element.id}" class="category" href="category.html">${element.name}</a>`
+            $row = `<a id="${element.id}" class="category" href="category.html">${element.name}</a>`
           }
+         $sidebar.append($row)
         })
 
         $(".category").click(setCategoryId);
@@ -82,6 +85,10 @@ function setCategoryId(){
   sessionStorage.setItem("category", this.id);
 }
 
+function renderProduct(id){
+  window.location.replace('product.html')
+  sessionStorage.setItem("productId",id)
+}
 
 function locateObject(id){
   const foundObject = objectArray.find(element => element.id === id);
