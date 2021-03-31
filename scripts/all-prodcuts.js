@@ -10,6 +10,7 @@ fetch("db.json").then(function(response) {
   }
    
   
+  
     response.json().then(function(data){
         data.product.forEach(element => {
             
@@ -17,10 +18,9 @@ fetch("db.json").then(function(response) {
             <div class="card border-dark mb-3" style="max-width: 20rem">
             <div class="card-header">${element.name}</div>
             <div class="card-body">
-                <img class="product-img" src=${element.image} alt="bild på ${element.name}">
-              <p class="card-text">
-                ${element.description}
-              </p>
+                <img class="img-thumbnail" src=${element.image} alt="bild på ${element.name}">
+                
+                <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
               <p class="product-price">
                 ${element.price}
               </p>

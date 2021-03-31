@@ -7,6 +7,14 @@
     {
       "id": 2,
       "name": "snacks"
+    },
+    {
+      "id": 3,
+      "name": "skafferi"
+    },
+    {
+      "id": 4,
+      "name": "bröd"
     }
   ],
   "company": [
