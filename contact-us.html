@@ -1,110 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styling/spacelab.css">
-    <link rel="stylesheet" href="styling/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styling/spacelab.css" />
+    <link rel="stylesheet" href="styling/login.css" />
     <title>Document</title>
     <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"
-  ></script>
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Hakims livs</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor03"
-          aria-controls="navbarColor03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarColor03">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Startsida </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="contact-us.html"
-                >Om oss <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Bildgalleri </a>
-            </li>
-          </ul>
-  
-          <form id="search-form" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Sök" />
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-              Sök
-            </button>
-          </form>
-  
-          <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-            <a
-              href="login.html"
-              id="login-btn"
-              class="btn btn-outline-primary my-2 my-sm-0"
-              >Logga in</a
+      <a class="navbar-brand" href="#">Hakims livs</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor03"
+        aria-controls="navbarColor03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Startsida </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact-us.html"
+              >Om oss <span class="sr-only">(current)</span></a
             >
-            <a
-              href="cart.html"
-              id="cart-btn"
-              class="btn btn-outline-primary my-2 my-sm-0"
-              >Varukorg</a
-            >
-          </form>
-        </div>
-      </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Bildgalleri </a>
+          </li>
+        </ul>
+
+        <form id="search-form" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Sök" />
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Sök
+          </button>
+        </form>
+
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
+          <a
+            href="login.html"
+            id="login-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Logga in</a
+          >
+          <a
+            href="cart.html"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Varukorg</a
+          >
+        </form>
+      </div>
+    </nav>
 
     <div class="container">
-        <div class="form text-center" style="margin-top: 1.5rem;">
-            <h2>Kontakta Hakim livs</h2>
-            <p>
-                <b>Hakim livs är en liten butik som drivs av Hakim. Då vi dessvärre är i en pandemi <br>
-                vill Hakim livs underlätta för alla sina underbara kunder. Hakim livs har börjat med <br>
-                utkörning till sina kunder. För att kunna göra en beställning och få varorna hemkörda <br>
-                så måste ni registera er antingen här på sidan eller om ni vill komma förbi vår butik. <br>
-                Besök gärna vårt bildgalleri för att se hur vi har det hos oss. <a href="gallery.html">Bildgalleri</a>
-                </b><br>
-            </p>
+      <div class="form text-center" style="margin-top: 1.5rem">
+        <h2>Kontakta Hakim livs</h2>
+        <p>
+          <b
+            >Hakim livs är en liten butik som drivs av Hakim. Då vi dessvärre är
+            i en pandemi <br />
+            vill Hakim livs underlätta för alla sina underbara kunder. Hakim
+            livs har börjat med <br />
+            utkörning till sina kunder. För att kunna göra en beställning och få
+            varorna hemkörda <br />
+            så måste ni registera er antingen här på sidan eller om ni vill
+            komma förbi vår butik. <br />
+            Besök gärna vårt bildgalleri för att se hur vi har det hos oss.
+            <a href="gallery.html">Bildgalleri</a> </b
+          ><br />
+        </p>
 
-            <p>
-                <h3>Hitta  hit:</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8158.640062564429!2d18.078116908607495!3d59.25512151814774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f799542b9dbf1%3A0xc445b322108d1735!2sH%C3%B6kar%C3%A4ngen%2C%20Farsta%20distrikt%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1617055924599!5m2!1ssv!2sse" width="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </p><br>
-
-            <p>
-                <h3>Kontakta oss här</h3>
-                <form>
-                    <label style="width: 130px; display: inline-block; text-align: left;" for="mail">Ange din e-post:</label>
-                    <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
-                    <label style="padding-top: 1rem;" for="message">Meddelande:</label><br>
-                    <textarea id="message" cols="36" rows="10"></textarea><br>
-                    <input type="submit" class="btn btn-secondary" value="Skicka" style="padding-left: 8.4rem; padding-right: 8.4rem">
-                </form>
-            </p>
-            
-
-
+        <div>
+          <h3>Hitta hit:</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8158.640062564429!2d18.078116908607495!3d59.25512151814774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f799542b9dbf1%3A0xc445b322108d1735!2sH%C3%B6kar%C3%A4ngen%2C%20Farsta%20distrikt%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1617055924599!5m2!1ssv!2sse"
+            width="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </div>
+        <br />
+
+        <div>
+          <h3>Kontakta oss här</h3>
+          <form>
+            <label
+              style="width: 130px; display: inline-block; text-align: left"
+              for="mail"
+              >Ange din e-post:</label
+            >
+            <input
+              id="mail"
+              type="email"
+              placeholder="Exempel@hakim.se"
+            /><br />
+            <label style="padding-top: 1rem" for="message">Meddelande:</label
+            ><br />
+            <textarea id="message" cols="36" rows="10"></textarea><br />
+            <input
+              type="submit"
+              class="btn btn-secondary"
+              value="Skicka"
+              style="padding-left: 8.4rem; padding-right: 8.4rem"
+            />
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
