@@ -58,5 +58,3 @@ function addToCart(object){
   localStorage.setItem("productsInCart", JSON.stringify(cartArray));
   alert("Produkten las till i varukorgen")
 }
-
-
