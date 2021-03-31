@@ -22,6 +22,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+   
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/footer-style.css">
@@ -83,7 +84,8 @@
       <h1>Registrering</h1>
       <br />
       <!--Måste ändra action-->
-      <form action="index.html" onsubmit="checkForm(this); return false;">
+      <form class="register-form" action="index.html" onsubmit="checkForm(this); return false;">
+      <!-- <form id="register-form" onsubmit="return checkForm(this); "> -->
         <label class="reg" for="firstname">Förnamn:</label>
         <input id="firstname" type="text" placeholder="Förnamn" /><br />
         <label class="reg" for="lastname">Efternamn:</label>
@@ -109,6 +111,7 @@
           class="btn btn-secondary"
           value="Skapa konto"
           style="padding-left: 6rem; padding-right: 6rem"
+          id="btn-submit"
         />
       </form>
     </div>
@@ -187,30 +190,6 @@
       </footer>
     </div>
 
-    <script>
-      function checkForm(form) {
-        let $firstname = $("#firstname").val();
-        let $lastname = $("#lastname").val();
-        let $adress = $("#adress").val();
-        let $postNr = $("#postNr").val();
-        let $ort = $("#ort").val();
-        let $mail = $("#mail").val();
-        let $password = $("#password").val();
-
-        if (
-          $firstname == "" ||
-          $lastname == "" ||
-          $adress == "" ||
-          $postNr == "" ||
-          $ort == "" ||
-          $mail == "" ||
-          $password == ""
-        ) {
-          $("#alert").text("* Fyll i alla fälten");
-        } else {
-          form.submit();
-        }
-      }
-    </script>
+    <script src="./scripts/register.js"></script>
   </body>
 </html>
