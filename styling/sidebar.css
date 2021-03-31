@@ -10,19 +10,21 @@
 
 .sidebar a {
   display: block;
-  color: black;
+  color: #000000;
   padding: 16px;
   text-decoration: none;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: rgb(129, 129, 129);
+  background-color: #818181;
   color: white;
+  text-decoration: none;
 }
 
 .sidebar a.active {
   background-color: #446e9b;
   color: white;
+  text-decoration: none;
 }
 
 div.content {

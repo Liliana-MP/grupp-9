@@ -12,6 +12,7 @@ fetch("db.json").then(function(response) {
   
   
     response.json().then(function(data){
+      // Renderar ut produkter
         data.product.forEach(element => {
             
             document.getElementById("row").innerHTML += ` <div class="col-lg-3 col-md-6 col-sm-12">
@@ -29,9 +30,24 @@ fetch("db.json").then(function(response) {
             </div>
           </div>`
           objectArray.push(element);
+
         })
+
+        // Renderar ut kategorier
+        data.category.forEach(element => {
+          document.getElementById("sidebar").innerHTML += `
+          <a id="${element.id}" class="category" href="category.html">${element.name}</a>`
+        })
+
+        $(".category").click(activate);
     })
 })
+
+
+function activate(){
+  sessionStorage.setItem("category", this.id);
+}
+
 
 function locateObject(id){
   const foundObject = objectArray.find(element => element.id === id);
@@ -58,5 +74,8 @@ function addToCart(object){
   localStorage.setItem("productsInCart", JSON.stringify(cartArray));
   alert("Produkten las till i varukorgen")
 }
+
+
+
 
 
