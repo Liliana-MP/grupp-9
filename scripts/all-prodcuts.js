@@ -1,6 +1,9 @@
 const objectArray = [];
 var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || []
 
+const getCategoryId = sessionStorage.getItem("category") || 0;
+console.log(getCategoryId);
+
 
 fetch("db.json").then(function(response) {
 
@@ -8,19 +11,21 @@ fetch("db.json").then(function(response) {
     console.log("Något gick fel. Status kod: " + response.status);
     return;
   }
-   
   
     response.json().then(function(data){
+      
+      // Renderar ut produkter
         data.product.forEach(element => {
+
+          if(getCategoryId == 0){
             
             document.getElementById("row").innerHTML += ` <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="card border-dark mb-3" style="max-width: 20rem">
             <div class="card-header">${element.name}</div>
             <div class="card-body">
-                <img class="product-img" src=${element.image} alt="bild på ${element.name}">
-              <p class="card-text">
-                ${element.description}
-              </p>
+                <img class="img-thumbnail" src=${element.image} alt="bild på ${element.name}">
+                
+                <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
               <p class="product-price">
                 ${element.price}
               </p>
@@ -29,9 +34,54 @@ fetch("db.json").then(function(response) {
             </div>
           </div>`
           objectArray.push(element);
+          
+        }else{
+         
+          if(getCategoryId == element.categoryid){
+            document.getElementById("row").innerHTML += ` <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card border-dark mb-3" style="max-width: 20rem">
+            <div class="card-header">${element.name}</div>
+            <div class="card-body">
+                <img class="img-thumbnail" src=${element.image} alt="bild på ${element.name}">
+                <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
+                <p class="product-price">
+                ${element.price}
+                </p>
+                <button type="button" class="btn btn-outline-success" onclick="locateObject(${element.id})">Köp</button>
+            </div>
+            </div>
+          </div>`
+          objectArray.push(element);
+          }
+        } 
+        
         })
+
+        // Renderar ut kategorier
+        if(getCategoryId == 0){
+        document.getElementById("sidebar").innerHTML += `<a id="0" class="category active" href="index.html">Alla produkter</a>`
+      } else {
+        document.getElementById("sidebar").innerHTML += `<a id="0" class="category" href="index.html">Alla produkter</a>`
+      }
+        data.category.forEach(element => {
+          if(element.id == getCategoryId){
+            document.getElementById("sidebar").innerHTML += `
+            <a id="${element.id}" class="category active" href="category.html">${element.name}</a>`
+          } else {
+            document.getElementById("sidebar").innerHTML += `
+            <a id="${element.id}" class="category" href="category.html">${element.name}</a>`
+          }
+        })
+
+        $(".category").click(setCategoryId);
     })
 })
+
+
+function setCategoryId(){
+  sessionStorage.setItem("category", this.id);
+}
+
 
 function locateObject(id){
   const foundObject = objectArray.find(element => element.id === id);

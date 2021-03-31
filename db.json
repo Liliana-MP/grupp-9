@@ -2,11 +2,19 @@
   "category": [
     {
       "id": 1,
-      "name": "dryck"
+      "name": "Dryck"
     },
     {
       "id": 2,
-      "name": "snacks"
+      "name": "Snacks"
+    },
+    {
+      "id": 3,
+      "name": "Skafferi"
+    },
+    {
+      "id": 4,
+      "name": "Bröd"
     }
   ],
   "company": [
@@ -35,7 +43,7 @@
       "name": "Cola Light",
       "companyid": 1,
       "categoryid": 1,
-      "image": "https://picsum.photos/200",
+      "image": "https://picsum.photos/201",
       "quantity": 7,
       "description": "God dryck av lightvarianten",
       "price": 12.99
@@ -45,7 +53,7 @@
       "name": "Pringles paprika",
       "companyid": 2,
       "categoryid": 2,
-      "image": "https://picsum.photos/200",
+      "image": "https://picsum.photos/202",
       "quantity": 6,
       "description": "chips som är goda",
       "price": 20.99
@@ -54,8 +62,8 @@
       "id": 4,
       "name": "Potatis",
       "companyid": 3,
-      "categoryid": 4,
-      "image": "https://picsum.photos/200",
+      "categoryid": 3,
+      "image": "https://picsum.photos/203",
       "quantity": 6,
       "description": "God potatis",
       "price": 20.99
