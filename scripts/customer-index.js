@@ -22,12 +22,18 @@ function fetchUser() {
 
 
      }
-     $("#btn-submit").click(function(){
-      $("#form-lock:input").prop("disabled", false);
-      // $("form-lock").enabled = "enabled";
+     $("#btn-change-info").click(function(){
       $("#form-lock").removeAttr("disabled");
-      // document.getElementById("#form-lock").disabled = false;
-      alert("TEST");
+      // alert("Ändra funkar");
     
     });
+    $("#btn-save-info").click(function(){
+      
+      $("#form-lock").prop("disabled", true);
+      // alert("Spara funkar");
+    
+    });
+
+
+
     });
