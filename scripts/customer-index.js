@@ -22,6 +22,12 @@ function fetchUser() {
 
 
      }
-
-     
+     $("#btn-submit").click(function(){
+      $("#form-lock:input").prop("disabled", false);
+      // $("form-lock").enabled = "enabled";
+      $("#form-lock").removeAttr("disabled");
+      // document.getElementById("#form-lock").disabled = false;
+      alert("TEST");
+    
+    });
     });
