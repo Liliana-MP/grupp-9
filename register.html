@@ -69,30 +69,8 @@
     </nav>
 
     <div class="content container">
-    <div class="form text-center">
-      <h1>Registrering</h1>
-      <br />
-      <!--Måste ändra action-->
-      <form class="register-form" action="index.html" onsubmit="checkForm(this); return false;">
-        <label class="reg" for="firstname">Förnamn:</label>
-        <input id="firstname" type="text" placeholder="Förnamn" /><br />
-        <label class="reg" for="lastname">Efternamn:</label>
-        <input id="lastname" type="text" placeholder="Efternamn" /><br />
-        <label class="reg" for="adress">Adress:</label>
-        <input id="adress" type="text" placeholder="Adress" /><br />
-        <label class="reg" for="postNr">Postnummer:</label>
-        <input id="postNr" type="tel" minlength="5" maxlength="5" placeholder="Postnummer" /><br />
-        <label class="reg" for="ort">Ort:</label>
-        <input id="ort" type="text" placeholder="Ort" /><br />
-        <label class="reg" for="mail">E-post:</label>
-        <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
-        <label class="reg" for="password">Lösenord:</label>
-        <input id="password" type="password" placeholder="Lösenord" /><br />
-        <small
-          class="font-weight-bold"
-          style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-          id="alert"
-        ></small>
+      <div class="form text-center">
+        <h1>Registrering</h1>
         <br />
         <!--Måste ändra action-->
         <form
@@ -107,7 +85,7 @@
           <label class="reg" for="adress">Adress:</label>
           <input id="adress" type="text" placeholder="Adress" /><br />
           <label class="reg" for="postNr">Postnummer:</label>
-          <input id="postNr" type="number" placeholder="Postnummer" /><br />
+          <input id="postNr" type="tel" minlength="5" maxlength="5" placeholder="Postnummer" /><br />
           <label class="reg" for="ort">Ort:</label>
           <input id="ort" type="text" placeholder="Ort" /><br />
           <label class="reg" for="mail">E-post:</label>
