@@ -15,9 +15,71 @@ console.log(categoryArray);
       <div class="card border-dark mb-3">
       <div class="card-header"><h1>${product.name}</h1></div>
       <div class="card-body">
-      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
-      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
-      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
+      <div class="container">
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+          <div class="numbertext">1 / 3</div>
+          <img
+            src="${product.image}"
+            style="width: 70%"
+            alt=""
+          />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 3</div>
+          <img
+            src="${product.image}"
+            style="width: 70%"
+            alt=""
+          />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 3</div>
+          <img
+            src="${product.image}"
+            style="width: 70%"
+            alt=""
+          />
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+        <!-- Thumbnail images -->
+        <div class="row" id="pic">
+          <div class="column">
+            <img
+              class="demo cursor"
+              src="${product.image}"
+              style="width: 100%"
+              onclick="currentSlide(1)"
+              alt=""
+            />
+          </div>
+          <div class="column">
+            <img
+              class="demo cursor"
+              src="${product.image}"
+              style="width: 100%"
+              onclick="currentSlide(2)"
+              alt=""
+            />
+          </div>
+          <div class="column">
+            <img
+              class="demo cursor"
+              src="${product.image}"
+              style="width: 100%"
+              onclick="currentSlide(3)"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
       <br>
           <p class="img-thumbnail"> ${product.description}</p>
           <p><b>Lager saldo:</b> ${product.quantity}</p>
@@ -85,5 +147,37 @@ console.log(categoryArray);
   }
   
 
+  var slideIndex = 1;
+  showSlides(slideIndex);
 
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
 
