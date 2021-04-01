@@ -61,7 +61,7 @@
     </nav>
     <!-- Page content -->
     <div class="content container">
-      <h1>Varukorg</h1>
+      <h1>Beställning</h1>
 
       <table class="table table-hover" id="product-in-cart">
         <thead>
@@ -69,7 +69,6 @@
             <th scope="col">Produkt</th>
             <th scope="col">Pris</th>
             <th scope="col">Antal</th>
-            <th scope="col"></th>
           </tr>
         </thead>
       </table>
@@ -77,9 +76,37 @@
         <div class="card-header">Total</div>
         <div class="card-body" id="total-amount"></div>
       </div>
-      <a href="checkout.html" type="button" class="btn btn-outline-success"
-        >Nästa steg</a
-      >
+      <div>
+        <h2>Leveransuppgifter</h2>
+        <br />
+        <!--Måste ändra action-->
+        <form
+          class="register-form"
+          action="index.html"
+          onsubmit="checkForm(this); return false;"
+        >
+          <input id="firstname" type="text" placeholder="Förnamn" /><br />
+          <input id="lastname" type="text" placeholder="Efternamn" /><br />
+          <input id="adress" type="text" placeholder="Adress" /><br />
+          <input
+            id="postNr"
+            type="tel"
+            minlength="5"
+            maxlength="5"
+            placeholder="Postnummer"
+          /><br />
+          <input id="ort" type="text" placeholder="Ort" /><br />
+
+          <small class="font-weight-bold" id="alert"></small>
+          <br />
+          <input
+            type="submit"
+            class="btn btn-outline-success"
+            value="Gå till betalning"
+            id="btn-submit"
+          />
+        </form>
+      </div>
 
       <div>
         <br />
@@ -158,6 +185,6 @@
       </div>
     </div>
 
-    <script src="scripts/products-in-cart.js"></script>
+    <script src="scripts/checkout-script.js"></script>
   </body>
 </html>
