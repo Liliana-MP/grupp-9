@@ -62,59 +62,8 @@
     </nav>
     <!-- Page content -->
     <div class="content container">
-      <h1>Beställning</h1>
-
-      <table class="table table-hover" id="product-in-cart">
-        <thead>
-          <tr>
-            <th scope="col">Produkt</th>
-            <th scope="col">Pris</th>
-            <th scope="col">Antal</th>
-          </tr>
-        </thead>
-      </table>
-      <div class="card border-primary mb-3" style="max-width: 20rem">
-        <div class="card-header">Total</div>
-        <div class="card-body" id="total-amount"></div>
-      </div>
-      <div>
-        <h2>Leveransuppgifter</h2>
-        <br />
-        <!--Måste ändra action-->
-        <form
-          id="confirm-form"
-          action="payment.html"
-          onsubmit="checkForm(this); return false;"
-        >
-          <input id="fName" type="text" placeholder="Förnamn" />
-          <small>Förnamn</small> <br />
-          <input id="lName" type="text" placeholder="Efternamn" />
-          <small>Efternamn</small> <br />
-          <input id="adrs" type="text" placeholder="Adress" />
-          <small>Adress</small> <br />
-          <input
-            id="zip"
-            type="tel"
-            minlength="5"
-            maxlength="5"
-            placeholder="Postnummer"
-          />
-          <small>Postkod</small> <br />
-          <!-- City ska fixas när vi har databas -->
-          <!-- <input id="city" type="text" placeholder="Ort" />
-          <small>Ort</small> -->
-
-          <small class="font-weight-bold" id="alert"></small>
-          <br />
-          <input
-            type="submit"
-            class="btn btn-outline-success"
-            value="Gå till betalning"
-            id="btn-submit"
-          />
-        </form>
-      </div>
-
+      <h1>Betalning</h1>
+      <h3>Tack för din beställning!</h3>
       <div>
         <br />
         <footer
