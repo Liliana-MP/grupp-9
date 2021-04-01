@@ -86,7 +86,6 @@ function setCategoryId(){
 function locateObject(id){
   const foundObject = objectArray.find(element => element.id === id);
   addToCart(foundObject)
-  $("#test" + id).toggle();
 }
 
 // Vi måste minska quantity i DB (vet ej om det behövs göras i json filen just nu)
@@ -106,5 +105,4 @@ function addToCart(object){
     findProduct.quantityInCart += 1;
   }
   localStorage.setItem("productsInCart", JSON.stringify(cartArray));
-  alert("Produkten las till i varukorgen")
 }
