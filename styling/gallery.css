@@ -60,7 +60,6 @@
 #caption-for-image {
   text-align: center;
   background-color: #222;
-  padding: 2px 10px;
   color: white;
   width: 54.6%;
   margin-left: 22%;
@@ -86,4 +85,8 @@
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+.gallery{
+  margin-bottom: 0;
 }
