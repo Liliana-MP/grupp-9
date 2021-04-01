@@ -17,7 +17,7 @@ async function checkIfUserExist(form) {
  
       } else errorTxt.text("* Epost och lösenord matchar inte")
     } else errorTxt.text("* Epost och lösenord matchar inte")
-  } else errorTxt.text("* Fyll i alla fälten")
+  } else errorTxt.text("* Fyll i alla fälten korrekt")
 }
 
 async function checkEmail(form) {
@@ -68,7 +68,7 @@ function validateEmailBox() {
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 
-  if (inputEmail.match(pattern)) {
+  if (pattern.test(inputEmail)) {
     return true;
   } else {
     return (false);
