@@ -1,10 +1,10 @@
 $(document).ready(function() {
+//ska fixas sen när vi fått ordning så att man kan beställa och spara orders.
+//     fetchOrder(){
 
-    fetchOrder(){
+//     }
 
-    }
-
-});
+// });
 
 
 // "id": 1,
