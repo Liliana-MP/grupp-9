@@ -29,7 +29,7 @@ async function checkForm(form) {
       $alert.text("* Enbart siffror i postnummer fältet")
     } 
     else if(!validatePassword($password)){
-      $alert.text("* Lösenord måste innehålla minst en symbol, en siffra och en stor bokstav och minst 8 tecken")
+      $alert.text("* Lösenord måste innehålla minst en symbol, en siffra, en stor bokstav och minst 8 tecken")
     }
     else if(!validateEmailBox($mail)){
       $alert.text("* Felaktig e-post address")
