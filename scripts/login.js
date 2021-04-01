@@ -10,6 +10,11 @@ async function checkIfUserExist(form) {
     if (user !== undefined) {
       if (checkPassword(user)) {
         form.submit()
+        window.location.replace("customer-index.html");
+        // const registeredUser = { firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $postNr, city: $ort, email: $mail, password: $password };
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
+        console.log(user);
+ 
       } else errorTxt.text("* Epost och lösenord matchar inte")
     } else errorTxt.text("* Epost och lösenord matchar inte")
   } else errorTxt.text("* Fyll i alla fälten")

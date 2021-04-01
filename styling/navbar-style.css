@@ -2,6 +2,14 @@
   margin-left: 1rem;
 }
 
+#logout-btn {
+  margin-left: 1rem;
+}
+
 #search-form {
   margin-right: 2rem;
+}
+
+#admin-btn {
+  margin-left: 1rem;
 }
