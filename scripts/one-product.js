@@ -1,29 +1,62 @@
 const objectArray = JSON.parse(sessionStorage.getItem("products")) || [];
 var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || [];
 const productId = JSON.parse(sessionStorage.getItem("productId")) || 1;
+const categoryArray = JSON.parse(sessionStorage.getItem("categorys")) || []
+const getCategoryId = JSON.parse(sessionStorage.getItem("categoryId")) || 0
+
+console.log(categoryArray);
 
 
         
         // Renderar ut produkter
           
         const product = objectArray.find(item => item.id == productId)
-      $("#row").append(`<div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card border-dark mb-3" style="max-width: 20rem">
-      <div class="card-header">${product.name}</div>
+      $("#row").append(`<div class="text-center col-md-12">
+      <div class="card border-dark mb-3">
+      <div class="card-header"><h1>${product.name}</h1></div>
       <div class="card-body">
-          <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
-          <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${product.description}</textarea>
+      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
+      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
+      <img class="img-thumbnail" src=${product.image} alt="bild på ${product.name}">
+      <br>
+          <p class="img-thumbnail"> ${product.description}</p>
+          <p><b>Lager saldo:</b> ${product.quantity}</p>
           <p class="product-price">
-          ${product.price}
+          ${product.price}: SEK &nbsp;&nbsp; <button type="button" class="btn btn-outline-success" onclick="locateObject(${product.id})">Köp</button>
           </p>
-          <button type="button" class="btn btn-outline-success" onclick="locateObject(${product.id})">Köp</button>
+         
+          
       </div>
       </div>
     </div>`)
+    renderCategory()
+
+
+    function renderCategory(){
+      const $sidebar =  $("#sidebar")
+      let $row;
+      let $active = "";
+      // Renderar ut kategorier
+      if(getCategoryId == 0)
+      $active = "active";
+    $row = `<a id="0" class="category ${$active}" href="index.html">Alla produkter</a>`
+    $sidebar.append($row)
+      categoryArray.forEach(element => {
+        if(element.id == getCategoryId){
+          $active = "active";
+        } else {
+          $active = "";
+        }
+        $row = `<a id="${element.id}" class="category ${$active}" href="category.html">${element.name}</a>`
+       $sidebar.append($row)
+      })
+    
+      $(".category").click(setCategoryId);
+    }
 
   
   function setCategoryId(){
-    sessionStorage.setItem("category", this.id);
+    sessionStorage.setItem("categoryId", this.id);
   }
 
   function locateObject(id){
@@ -49,7 +82,6 @@ const productId = JSON.parse(sessionStorage.getItem("productId")) || 1;
       findProduct.quantityInCart += 1;
     }
     localStorage.setItem("productsInCart", JSON.stringify(cartArray));
-    alert("Produkten las till i varukorgen")
   }
   
 
