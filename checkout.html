@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/footer-style.css" />
+    <link rel="stylesheet" href="styling/checkout.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,21 +82,26 @@
         <br />
         <!--Måste ändra action-->
         <form
-          class="register-form"
+          id="confirm-form"
           action="index.html"
           onsubmit="checkForm(this); return false;"
         >
-          <input id="fName" type="text" placeholder="Förnamn" /><br />
-          <input id="lName" type="text" placeholder="Efternamn" /><br />
-          <input id="adrs" type="text" placeholder="Adress" /><br />
+          <input id="fName" type="text" placeholder="Förnamn" />
+          <small>Förnamn</small> <br />
+          <input id="lName" type="text" placeholder="Efternamn" />
+          <small>Efternamn</small> <br />
+          <input id="adrs" type="text" placeholder="Adress" />
+          <small>Adress</small> <br />
           <input
-            id="postNr"
+            id="zip"
             type="tel"
             minlength="5"
             maxlength="5"
             placeholder="Postnummer"
-          /><br />
-          <input id="city" type="text" placeholder="Ort" /><br />
+          />
+          <small>Postkod</small> <br />
+          <input id="city" type="text" placeholder="Ort" />
+          <small>Ort</small>
 
           <small class="font-weight-bold" id="alert"></small>
           <br />
@@ -184,7 +190,6 @@
         </footer>
       </div>
     </div>
-
     <script src="scripts/checkout-script.js"></script>
   </body>
 </html>
