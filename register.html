@@ -22,10 +22,10 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-   
+    <script src="scripts/navbar-script.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
-    <link rel="stylesheet" href="styling/footer-style.css">
+    <link rel="stylesheet" href="styling/footer-style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,133 +64,126 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          <a
-            href="login.html"
-            id="login-btn"
-            class="btn btn-outline-primary my-2 my-sm-0 active"
-            >Logga in</a
-          >
-          <a
-            href="cart.html"
-            id="cart-btn"
-            class="btn btn-outline-primary my-2 my-sm-0"
-            >Varukorg</a
-          >
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
     <div class="content container">
-    <div class="form text-center">
-      <h1>Registrering</h1>
-      <br />
-      <!--Måste ändra action-->
-      <form class="register-form" action="index.html" onsubmit="checkForm(this); return false;">
-        <label class="reg" for="firstname">Förnamn:</label>
-        <input id="firstname" type="text" placeholder="Förnamn" /><br />
-        <label class="reg" for="lastname">Efternamn:</label>
-        <input id="lastname" type="text" placeholder="Efternamn" /><br />
-        <label class="reg" for="adress">Adress:</label>
-        <input id="adress" type="text" placeholder="Adress" /><br />
-        <label class="reg" for="postNr">Postnummer:</label>
-        <input id="postNr" type="number" placeholder="Postnummer" /><br />
-        <label class="reg" for="ort">Ort:</label>
-        <input id="ort" type="text" placeholder="Ort" /><br />
-        <label class="reg" for="mail">E-post:</label>
-        <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
-        <label class="reg" for="password">Lösenord:</label>
-        <input id="password" type="password" placeholder="Lösenord" /><br />
-        <small
-          class="font-weight-bold"
-          style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-          id="alert"
-        ></small>
+      <div class="form text-center">
+        <h1>Registrering</h1>
         <br />
-        <input
-          type="submit"
-          class="btn btn-secondary"
-          value="Skapa konto"
-          style="padding-left: 6rem; padding-right: 6rem"
-          id="btn-submit"
-        />
-      </form>
-    </div>
-
-    <div>
-      <br>
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
-        <!-- Footer Elements -->
-        <div class="container">
-          <hr />
+        <!--Måste ändra action-->
+        <form
+          class="register-form"
+          action="index.html"
+          onsubmit="checkForm(this); return false;"
+        >
+          <label class="reg" for="firstname">Förnamn:</label>
+          <input id="firstname" type="text" placeholder="Förnamn" /><br />
+          <label class="reg" for="lastname">Efternamn:</label>
+          <input id="lastname" type="text" placeholder="Efternamn" /><br />
+          <label class="reg" for="adress">Adress:</label>
+          <input id="adress" type="text" placeholder="Adress" /><br />
+          <label class="reg" for="postNr">Postnummer:</label>
+          <input id="postNr" type="number" placeholder="Postnummer" /><br />
+          <label class="reg" for="ort">Ort:</label>
+          <input id="ort" type="text" placeholder="Ort" /><br />
+          <label class="reg" for="mail">E-post:</label>
+          <input id="mail" type="email" placeholder="Exempel@hakim.se" /><br />
+          <label class="reg" for="password">Lösenord:</label>
+          <input id="password" type="password" placeholder="Lösenord" /><br />
+          <small
+            class="font-weight-bold"
+            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+            id="alert"
+          ></small>
           <br />
-          <div id="test" class="test">
-            <div class="klarna">
-              <div class="view overlay z-depth-1-half">
-                <img
-                  src="images/Klarna-Payment-Ny-logga-juni-2019-1024x491.png"
-                  class="img-fluid delivery-img"
-                  alt=""
-                />
-                <a href="">
-                  <div class="mask rgba-white-light"></div>
-                </a>
-              </div>
-            </div>
+          <input
+            type="submit"
+            class="btn btn-secondary"
+            value="Skapa konto"
+            style="padding-left: 6rem; padding-right: 6rem"
+            id="btn-submit"
+          />
+        </form>
+      </div>
 
-            <div class="budbee">
-              <div class="view overlay z-depth-1-half">
-                <img
-                  src="images/budbee.png"
-                  class="img-fluid delivery-img"
-                  alt=""
-                />
-                <a href="">
-                  <div class="mask rgba-white-light"></div>
-                </a>
-              </div>
-            </div>
-
-            <div class="postnord">
-              <div class="view overlay z-depth-1-half">
-                <img
-                  src="images/postnord.png"
-                  class="img-fluid delivery-img"
-                  alt=""
-                />
-                <a href="">
-                  <div class="mask rgba-white-light"></div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div class="row">
-          <div class="mx-auto d-block">
-            <h5 class="text-uppercase font-weight-bold">
-              <a href="kontaktsida.html">Kontakta oss</a>
-            </h5>
-            <img
-              class="footer-img"
-              src="images/phone.png"
-              alt="pictureOfPhone"
-            />
+      <div>
+        <br />
+        <footer
+          class="page-footer font-small mdb-color lighten-3 pt-4 bg-light"
+        >
+          <!-- Footer Elements -->
+          <div class="container">
+            <hr />
             <br />
-            <p id="kontakt-text">
-              08-123456
-              <br />
-              (Vardagar 08 - 22)
-            </p>
+            <div id="test" class="test">
+              <div class="klarna">
+                <div class="view overlay z-depth-1-half">
+                  <img
+                    src="images/Klarna-Payment-Ny-logga-juni-2019-1024x491.png"
+                    class="img-fluid delivery-img"
+                    alt=""
+                  />
+                  <a href="">
+                    <div class="mask rgba-white-light"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="budbee">
+                <div class="view overlay z-depth-1-half">
+                  <img
+                    src="images/budbee.png"
+                    class="img-fluid delivery-img"
+                    alt=""
+                  />
+                  <a href="">
+                    <div class="mask rgba-white-light"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="postnord">
+                <div class="view overlay z-depth-1-half">
+                  <img
+                    src="images/postnord.png"
+                    class="img-fluid delivery-img"
+                    alt=""
+                  />
+                  <a href="">
+                    <div class="mask rgba-white-light"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <hr />
           </div>
-        </div>
-        <div class="footer-copyright text-center py-3">
-          © 2021 Hakim Enterprises Ab
-        </div>
-      </footer>
+
+          <div class="row">
+            <div class="mx-auto d-block">
+              <h5 class="text-uppercase font-weight-bold">
+                <a href="kontaktsida.html">Kontakta oss</a>
+              </h5>
+              <img
+                class="footer-img"
+                src="images/phone.png"
+                alt="pictureOfPhone"
+              />
+              <br />
+              <p id="kontakt-text">
+                08-123456
+                <br />
+                (Vardagar 08 - 22)
+              </p>
+            </div>
+          </div>
+          <div class="footer-copyright text-center py-3">
+            © 2021 Hakim Enterprises Ab
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
 
     <script src="./scripts/register.js"></script>
   </body>
