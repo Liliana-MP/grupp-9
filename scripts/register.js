@@ -17,7 +17,11 @@ function checkForm(form) {
       $password == ""
     ) {
       $("#alert").text("* Fyll i alla fälten");
-    } else {
+    } 
+    else if(!validatePassword($password)){
+      $("#alert").text("* Måste innehålla minst en symbol, en siffra och en stor bokstav och minst 8 tecken")
+    }
+    else {
         const registeredUser = { firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $postNr, city: $ort, email: $mail, password: $password };
         localStorage.setItem("registeredUser", JSON.stringify(registeredUser));
         const getMyObject= JSON.parse(localStorage.getItem("registeredUser"));
@@ -25,3 +29,16 @@ function checkForm(form) {
       form.submit();
     }
   }
+
+  function validatePassword(input) 
+{ 
+const paswd=  /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+if(paswd.test(input)) 
+{ 
+return true;
+}
+else
+{ 
+return false;
+}
+}  
