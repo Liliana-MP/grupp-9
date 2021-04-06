@@ -88,11 +88,17 @@
         <h1 class="text-center">Produkter Bree</h1>
     <div class="text-center" id="search-prod-div">
         <form >
-            <label class="reg" for="search-prod">Sök produkt: </label>
-            <input type="text">
+            <label class="reg" for="search-product">Sök produkt: </label>
+            <input type="text" id="search-product" style="margin-bottom: 0rem;" placeholder="Produkt namn">
             <br>
-            <button class="btn btn-outline-primary" style="margin-left: 7.1rem">Redigera</button>
-            <button class="btn btn-outline-primary" >Ta bort</button>
+            <small
+              class="font-weight-bold"
+              style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+              id="alert-one"
+            ></small>
+            <br>
+            <button class="btn btn-outline-primary" style="margin-left: 7.1rem" onclick="render_product(); return false;">Redigera</button>
+            <button class="btn btn-outline-primary" onclick="remove_product()">Ta bort</button>
         </form>
     </div>
 
@@ -112,7 +118,7 @@
             <small
               class="font-weight-bold"
               style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-              id="alert"
+              id="alert-two"
             ></small>
             <br>
             <input class="btn btn-outline-primary" style="margin-left: 14rem;" type="submit" value="Spara">
