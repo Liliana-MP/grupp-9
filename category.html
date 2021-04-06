@@ -27,7 +27,10 @@
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+    >
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -64,9 +67,7 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
@@ -150,6 +151,8 @@
 
     <script src="scripts/all-prodcuts.js"></script>
     <script src="scripts/category.js"></script>
-    <script>renderAllProducts()</script>
+    <script>
+      renderAllProducts();
+    </script>
   </body>
 </html>

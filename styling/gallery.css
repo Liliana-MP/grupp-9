@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.content {
+  margin-top: 4rem;
+}
+
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -87,6 +91,6 @@
   opacity: 1;
 }
 
-.gallery{
+.gallery {
   margin-bottom: 0;
 }

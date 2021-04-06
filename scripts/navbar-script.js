@@ -50,7 +50,7 @@ function loadNavbar() {
     href="customer-index.html"
     id="profile-btn"
     class="btn btn-outline-primary my-2 my-sm-0"
-    >Profil</a
+    >Mitt Konto</a
   >
     <a
     href="#"
