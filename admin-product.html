@@ -23,12 +23,13 @@
     <link rel="stylesheet" href="styling/all-products.css" />
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/footer-style.css"/>
+    <link rel="stylesheet" href="styling/admin.css">
 
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -76,31 +77,53 @@
       <a class="" href="admin-index.html">Admin</a>
       <a class="active" href="admin-product.html"> Produkter</a>
       <a href="">Kategorier</a>
+      <a href="">Tillverkare</a>
       <a href="">Beställningar</a>
       <a href="">Kunder</a>
+      
     </div>
 
     <!-- Page content -->
-    <div class="content container">
+    <div class="content container" style="margin-top: 3.5rem;">
         <h1 class="text-center">Produkter Bree</h1>
     <div class="text-center" id="search-prod-div">
         <form >
-            <label for="search-prod">Sök produkt: </label>
+            <label class="reg" for="search-prod">Sök produkt: </label>
             <input type="text">
             <br>
-            <button class="btn btn-outline-primary" style="margin-left: 7rem">Redigera</button>
+            <button class="btn btn-outline-primary" style="margin-left: 7.1rem">Redigera</button>
             <button class="btn btn-outline-primary" >Ta bort</button>
         </form>
     </div>
 
-    <div id="content">
-        
+    <div class="text-center" id="content" style="margin-top: 1rem;">
+        <h3>Redigera / lägg till produkt bree</h3>
+        <form onsubmit="validate_product(this); return false;">
+            <label class="reg" for="product-name">Namn:</label>
+            <input id="product-name" type="text" placeholder="Produkt namn" ><br />
+            <label class="reg" for="product-producer">Tillverkare:</label>
+            <input id="product-producer" type="text" placeholder="Tillverkare" /><br />
+            <label class="reg" for="product-category">Kategori:</label>
+            <input id="product-category" type="text" placeholder="Kategori" /><br />
+            <label class="reg" for="product-quantity">Antal:</label>
+            <input id="product-quantity" type="tel" placeholder="Antal" /><br />
+            <label class="reg" for="product-price">Pris:</label>
+            <input id="product-price" type="tel" placeholder="Pris" /><br />
+            <small
+              class="font-weight-bold"
+              style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+              id="alert"
+            ></small>
+            <br>
+            <input class="btn btn-outline-primary" style="margin-left: 14rem;" type="submit" value="Spara">
+
+        </form>
     </div>
 
         
      
    <!-- Footer Elements -->
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4 ">
         <div class="container">
           <hr />
           <br />
@@ -172,5 +195,6 @@
     </div>
 
     <script src="scripts/all-prodcuts.js"></script>
+    <script src="scripts/admin.js"></script>
   </body>
 </html>

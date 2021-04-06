@@ -25,23 +25,17 @@ function loadNavbar() {
   >`);
   } else if ($loggedInUser.isadmin) {
     $($newNavbar).append(`
-        <a
-        href="customer-index.html"
-        id="profile-btn"
+    <a
+        href="admin-index.html"
+        id="admin-btn"
         class="btn btn-outline-primary my-2 my-sm-0"
-        >Profil</a
+        >Admin panelen</a
       >
         <a
         href="#"
         id="logout-btn"
         class="btn btn-outline-primary my-2 my-sm-0"
         >Logga ut</a
-      >
-      <a
-        href="#"
-        id="admin-btn"
-        class="btn btn-outline-primary my-2 my-sm-0"
-        >Admin panelen</a
       >
         `);
   } else if ($loggedInUser != null) {
