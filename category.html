@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/navbar-script.js"></script>
+    <script src="scripts/sidepanel-script.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
@@ -71,10 +72,17 @@
       </div>
     </nav>
 
-    <div id="sidebar" class="sidebar"></div>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
+    </div>
 
     <!-- Page content -->
-    <div class="content">
+    <div id="main" class="content">
+      <button class="btn btn-outline-primary" onclick="openSidePanel()">
+        Sidomeny
+      </button>
       <div class="row" id="row"></div>
 
       <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">

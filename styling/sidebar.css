@@ -1,18 +1,23 @@
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 150px;
-  background-color: #f1f1f1;
-  position: fixed;
   height: 100%;
-  overflow: auto;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
 .sidebar a {
-  display: block;
-  color: #000000;
-  padding: 16px;
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidebar a:hover:not(.active) {
@@ -27,25 +32,21 @@
   text-decoration: none;
 }
 
-div.content {
-  margin-left: 150px;
-  padding: 1px 16px;
-  height: 1000px;
+.sidebar .closebtn {
+  top: 0;
+  font-size: 36px;
 }
 
-@media screen and (max-width: 700px) {
+.content {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-width: 400px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+    padding-top: 3rem;
   }
   .sidebar a {
-    float: left;
-    text-align: center;
-    float: none;
-  }
-
-  div.content {
-    margin-left: 0;
+    font-size: 18px;
   }
 }

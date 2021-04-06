@@ -17,6 +17,8 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="scripts/sidepanel-script.js"></script>
+
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
@@ -72,8 +74,11 @@
       </div>
     </nav>
 
-    <div class="sidebar">
+    <div id="sidebar" class="sidebar">
         <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
       <a class="active" href="customer-profile.html">Profil</a>
       <a href="customer-orders.html"> Beställningar</a>
       <a href="customer-discounts.html">Erbjudanden</a>
@@ -81,7 +86,10 @@
     </div>
 
     <!-- Page content -->
-    <div class="content">
+    <div id="main" class="content">
+      <button class="btn btn-outline-primary" onclick="openSidePanel()">
+        Sidomeny
+      </button>
       <!-- <div class="row" id="row"></div> -->
       <br>
       <fieldset id="form-lock" disabled=true>
