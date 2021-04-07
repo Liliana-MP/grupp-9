@@ -21,14 +21,28 @@ renderUser();
                   // Renderar ut produkter
                     data.user.forEach(element => {
                         
-                    $id = element.id;
-                    $firstname = element.firstname;
-                    $lastname = element.lastname;
-                    $email = element.email;
-                    $tNumber = element.phonenumber;
-                    $adress = element.address;
-                    $zip = element.zipcode;
-                    $cityId = element.city;
+                    // $id = element.id;
+                    // $firstname = element.firstname;
+                    // $lastname = element.lastname;
+                    // $email = element.email;
+                    // $tNumber = element.phonenumber;
+                    // $adress = element.address;
+                    // $zip = element.zipcode;
+                    // $cityId = element.city;
+
+                    $("#table-customer").append(
+                        `<tr>
+                        <th scope="row">${element.id}</th>
+                        <td>${element.firstname}</td>
+                        <td>${element.lastname}</td>
+                        <td>${element.email}</td>
+                        <td>${element.phonenumber}</td>
+                        <td>${element.adress}</td>
+                        <td>${element.zipcode}</td>
+                        <td>${element.cityid}</td>
+                      </tr>`
+
+                        );
 
                 
                     // console.log($id);
