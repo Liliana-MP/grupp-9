@@ -81,8 +81,8 @@
       >
       <a class="" href="admin-index.html">Admin</a>
       <a class="" href="admin-product.html"> Produkter</a>
-      <a class="active" href="admin-category.html">Kategorier</a>
-      <a class="" href="admin-company.html">Tillverkare</a>
+      <a class="" href="admin-category.html">Kategorier</a>
+      <a class="active" href="admin-company.html">Tillverkare</a>
       <a href="">Beställningar</a>
       <a href="">Kunder</a>
       
@@ -94,11 +94,11 @@
     </button>
     <div class="content container" id="main" style="margin-top: 1px;">
      
-        <h1 class="text-center">Kategorier BREEE</h1>
+        <h1 class="text-center">Tillverkare BREEE</h1>
     <div class="text-center" id="search-prod-div">
         <form >
-            <label class="reg" for="search-category">Sök kategori: </label>
-            <input type="text" id="search-category" style="margin-bottom: 0rem;" placeholder="Kategori namn">
+            <label class="reg" for="search-company">Sök tillverkare: </label>
+            <input type="text" id="search-company" style="margin-bottom: 0rem;" placeholder="Tillverkare namn">
             <br>
             <small
               class="font-weight-bold"
@@ -106,18 +106,18 @@
               id="alert-one"
             ></small>
             <br>
-            <button class="btn btn-outline-primary" style="margin-left: 7.1rem" onclick="render_category(); return false;">Redigera</button>
-            <button class="btn btn-outline-primary" onclick="remove_category(this); return false;">Ta bort</button>
+            <button class="btn btn-outline-primary" style="margin-left: 7.1rem" onclick="render_company(); return false;">Redigera</button>
+            <button class="btn btn-outline-primary" onclick="remove_company(this); return false;">Ta bort</button>
         </form>
     </div>
 
     <div class="text-center" id="content" style="margin-top: 1rem;">
-        <h3>Redigera / Lägg till kategori</h3>
-        <form onsubmit="validate_category(this); return false;">
-            <label class="reg" for="category-name-old">Tidigare:</label>
-            <input id="category-name-old" type="text" placeholder="Kategori namn" ><br />
-            <label class="reg" for="category-name-new">Nytt:</label>
-            <input id="category-name-new" type="text" placeholder="Kategori namn" ><br />
+        <h3>Redigera / Lägg till Tillverkare</h3>
+        <form onsubmit="validate_company(this); return false;">
+            <label class="reg" for="company-name-old">Tidigare:</label>
+            <input id="company-name-old" type="text" placeholder="Kategori namn" ><br />
+            <label class="reg" for="company-name-new">Nytt:</label>
+            <input id="company-name-new" type="text" placeholder="Kategori namn" ><br />
             <small
               class="font-weight-bold"
               style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
