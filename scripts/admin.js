@@ -10,7 +10,6 @@ function closeSidePanel(){
   document.getElementById("main").style.marginLeft = "auto";
 }
 
-
 async function validate_product(form) {
     let $name = $("#product-name").val()
     let $producer = $("#product-producer").val()
@@ -19,7 +18,6 @@ async function validate_product(form) {
     let $price = $("#product-price").val()
 
     const errorTxt = $("#alert-two")
-
 
     var responce = await fetch(resource)
     var data = await responce.json()
@@ -55,9 +53,6 @@ async function validate_product(form) {
     
   }
 
- 
-
-
   async function render_product(){
     let $product = $("#search-product").val()
     let $name = $("#product-name")
@@ -88,13 +83,12 @@ async function validate_product(form) {
     }
     else errorTxt.text("* Produkten finns inte")
   }
-
   }
-
 
   async function remove_product(form){
     let $product = $("#search-product")
     const errorTxt = $("#alert-one")
+
     var responce = await fetch(resource)
     var data = await responce.json()
 
@@ -106,8 +100,7 @@ async function validate_product(form) {
     else {
        alert("borta")
        $(form).parent().submit()
-    // tabort produkt från db
-    
+    // tabort produkt från db    
   }
   }
   
