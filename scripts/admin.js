@@ -104,3 +104,79 @@ async function validate_product(form) {
   }
   }
   
+
+  async function validate_category(form) {
+    let $old = $("#category-name-old").val()
+    let $new = $("#category-name-new").val()
+    
+
+    const errorTxt = $("#alert-two")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.category.find(item => item.name.toUpperCase() == $old.toUpperCase())
+    const newCategory = data.category.find(item => item.name.toUpperCase() == $new.toUpperCase())
+
+    if ($old == "" && newCategory == undefined){
+      // funktion för att spara kategori till db
+      form.submit()
+    }
+    else if ($new == "") 
+        errorTxt.text("* Fyll i alla fälten korrekt")
+
+     else if (newCategory != undefined)
+     errorTxt.text("* Den nya kategorin finns redan")
+
+     else if(category == undefined)
+     errorTxt.text("* Kategorin finns inte i registret")
+   
+    else {
+      // funktion för att ändra kategori i db
+      form.submit()
+    }
+    
+  }
+
+
+  async function render_category(){
+    let $old = $("#category-name-old")
+    let $input = $("#search-category").val()
+
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    if ($input == "")
+    errorTxt.text("* Fyll i fältet")
+    else {
+      const category = data.category.find(item => item.name.toUpperCase() == $input.toUpperCase())
+  
+    if(category !== undefined){
+        $old.val(category.name)
+        errorTxt.text("")
+    }
+    else errorTxt.text("* Kategorin finns inte")
+  }
+  }
+
+
+  async function remove_category(form){
+    let $category = $("#search-category")
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.category.find(item => item.name.toUpperCase() == $category.val().toUpperCase())
+    if ($category.val() == "")
+    errorTxt.text("* Fyll i fältet")
+    else if (category == undefined)
+     errorTxt.text("* Kategorin finns inte")
+    else {
+       alert("borta")
+       $(form).parent().submit()
+    // tabort kategori från db    
+  }
+  }
