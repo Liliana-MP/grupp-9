@@ -19,13 +19,15 @@
     <script src="scripts/navbar-script.js"></script>
     <script src="scripts/all-prodcuts.js"></script>
     <script src="scripts/admin.js"></script>
+    <script src="scripts/sidepanel-script.js"></script>
+
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
     <link rel="stylesheet" href="styling/all-products.css" />
-    <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/footer-style.css" />
     <link rel="stylesheet" href="styling/admin.css" />
+    <link rel="stylesheet" href="styling/checkout.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -74,103 +76,88 @@
       </div>
     </nav>
 
-    <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
     <div class="sidebar" id="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
         >&times;</a
       >
       <a class="" href="admin-index.html">Admin</a>
-      <a class="active" href="admin-product.html"> Produkter</a>
+      <a class="" href="admin-product.html"> Produkter</a>
       <a href="">Kategorier</a>
       <a href="">Tillverkare</a>
-      <a class="" href="admin-order.html">Beställningar</a>
+      <a class="active" href="admin-order.html">Beställningar</a>
       <a href="">Kunder</a>
     </div>
 
     <!-- Page content -->
-    <button
-      class="btn btn-outline-primary"
-      onclick="openSidePanel()"
-      style="margin-left: 0.5rem; margin-top: 4rem"
-    >
-      Sidomeny
-    </button>
-    <div class="content container" id="main" style="margin-top: 3.5rem">
-      <h1 class="text-center">Produkter Bree</h1>
-      <div class="text-center" id="search-prod-div">
-        <form>
-          <label class="reg" for="search-product">Sök produkt: </label>
-          <input
-            type="text"
-            id="search-product"
-            style="margin-bottom: 0rem"
-            placeholder="Produkt namn"
-          />
-          <br />
-          <small
-            class="font-weight-bold"
-            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-            id="alert-one"
-          ></small>
-          <br />
-          <button
-            class="btn btn-outline-primary"
-            style="margin-left: 7.1rem"
-            onclick="render_product(); return false;"
+
+    <div class="content" id="main">
+      <button
+        class="btn btn-outline-primary"
+        onclick="openSidePanel()"
+        id="sidepanel-btn"
+      >
+        Sidomeny
+      </button>
+      <div class="container">
+        <h1 style="margin-top: 2rem" class="text-center">Beställning</h1>
+
+        <table class="table table-hover" id="product-in-cart">
+          <thead>
+            <tr>
+              <th scope="col">Produkt</th>
+              <th scope="col">Pris</th>
+              <th scope="col">Antal</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="card border-primary mb-3" style="max-width: 20rem">
+          <div class="card-header">Total</div>
+          <div class="card-body" id="total-amount"></div>
+        </div>
+        <div>
+          <h2>Leveransuppgifter</h2>
+          <form
+            id="confirm-form"
+            action="payment.html"
+            onsubmit="checkForm(this); return false;"
           >
-            Redigera
-          </button>
+            <input id="fName" type="text" placeholder="Förnamn" readonly />
+            <small>Förnamn</small> <br />
+            <input id="lName" type="text" placeholder="Efternamn" readonly />
+            <small>Efternamn</small> <br />
+            <input id="adrs" type="text" placeholder="Adress" readonly />
+            <small>Adress</small> <br />
+            <input
+              id="zip"
+              type="tel"
+              minlength="5"
+              maxlength="5"
+              placeholder="Postnummer"
+              readonly
+            />
+            <small>Postkod</small> <br />
+            <input id="adrs" type="text" placeholder="Ort" readonly />
+            <small>Ort</small> <br />
+            <!-- City ska fixas när vi har databas -->
+            <!-- <input id="city" type="text" placeholder="Ort" />
+            <small>Ort</small> -->
+
+            <small class="font-weight-bold" id="alert"></small>
+            <br />
+          </form>
           <button
-            class="btn btn-outline-primary"
-            onclick="remove_product(this); return false;"
+            class="btn btn-outline-success"
+            id="sidepanel-btn"
+            onclick="window.print()"
+            style="margin-bottom: 3rem"
           >
-            Ta bort
+            Skriv ut
           </button>
-        </form>
+        </div>
       </div>
 
-      <div class="text-center" id="content" style="margin-top: 1rem">
-        <h3>Redigera / lägg till produkt bree</h3>
-        <form onsubmit="validate_product(this); return false;">
-          <label class="reg" for="product-name">Namn:</label>
-          <input
-            id="product-name"
-            type="text"
-            placeholder="Produkt namn"
-          /><br />
-          <label class="reg" for="product-producer">Tillverkare:</label>
-          <input
-            id="product-producer"
-            type="text"
-            placeholder="Tillverkare"
-          /><br />
-          <label class="reg" for="product-category">Kategori:</label>
-          <input
-            id="product-category"
-            type="text"
-            placeholder="Kategori"
-          /><br />
-          <label class="reg" for="product-quantity">Antal:</label>
-          <input id="product-quantity" type="tel" placeholder="Antal" /><br />
-          <label class="reg" for="product-price">Pris:</label>
-          <input id="product-price" type="tel" placeholder="Pris" /><br />
-          <small
-            class="font-weight-bold"
-            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-            id="alert-two"
-          ></small>
-          <br />
-          <input
-            class="btn btn-outline-primary"
-            style="margin-left: 14rem"
-            type="submit"
-            value="Spara"
-          />
-        </form>
-      </div>
-
-      <!-- Footer Elements -->
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+        <!-- Footer Elements -->
         <div class="container">
           <hr />
           <br />
