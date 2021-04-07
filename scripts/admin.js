@@ -49,8 +49,7 @@ async function validate_product(form) {
     else {
       // funktion för att spara/ändra produkt i db
       form.submit()
-    }
-    
+    }    
   }
 
   async function render_product(){
