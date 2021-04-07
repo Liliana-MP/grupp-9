@@ -180,3 +180,80 @@ async function validate_product(form) {
     // tabort kategori från db    
   }
   }
+
+
+  async function validate_company(form) {
+    let $old = $("#company-name-old").val()
+    let $new = $("#company-name-new").val()
+    
+
+    const errorTxt = $("#alert-two")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const company = data.company.find(item => item.name.toUpperCase() == $old.toUpperCase())
+    const newCompany = data.company.find(item => item.name.toUpperCase() == $new.toUpperCase())
+
+    if ($old == "" && newCompany == undefined){
+      // funktion för att spara kategori till db
+      form.submit()
+    }
+    else if ($new == "") 
+        errorTxt.text("* Fyll i alla fälten korrekt")
+
+     else if (newCompany != undefined)
+     errorTxt.text("* Den nya Tillverkaren finns redan")
+
+     else if(company == undefined)
+     errorTxt.text("* Tillverkaren finns inte i registret")
+   
+    else {
+      // funktion för att ändra kategori i db
+      form.submit()
+    }
+    
+  }
+
+
+  async function render_company(){
+    let $old = $("#company-name-old")
+    let $input = $("#search-company").val()
+
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    if ($input == "")
+    errorTxt.text("* Fyll i fältet")
+    else {
+      const company = data.company.find(item => item.name.toUpperCase() == $input.toUpperCase())
+  
+    if(company !== undefined){
+        $old.val(company.name)
+        errorTxt.text("")
+    }
+    else errorTxt.text("* Tillverkaren finns inte")
+  }
+  }
+
+
+  async function remove_company(form){
+    let $company = $("#search-company")
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.company.find(item => item.name.toUpperCase() == $company.val().toUpperCase())
+    if ($company.val() == "")
+    errorTxt.text("* Fyll i fältet")
+    else if (category == undefined)
+     errorTxt.text("* Tillverkaren finns inte")
+    else {
+       alert("borta")
+       $(form).parent().submit()
+    // tabort kategori från db    
+  }
+  }
