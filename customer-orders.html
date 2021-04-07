@@ -17,19 +17,26 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/navbar-script.js"></script>
+    <script src="scripts/sidepanel-script.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
     <link rel="stylesheet" href="styling/all-products.css" />
     <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
     <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
-    <link rel="stylesheet" href="./styling/customer-index.css" type="text/css" />
-
+    <link
+      rel="stylesheet"
+      href="./styling/customer-index.css"
+      type="text/css"
+    />
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+    >
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -66,14 +73,15 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
-    <div class="sidebar">
-        <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+    <div id="sidebar" class="sidebar">
+      <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
       <a class="" href="customer-profile.html">Profil</a>
       <a class="active" href="customer-orders.html"> Beställningar</a>
       <a href="customer-discounts.html">Erbjudanden</a>
@@ -81,51 +89,52 @@
     </div>
 
     <!-- Page content -->
-    <div class="content">
+    <div id="main" class="content">
+      <button class="btn btn-outline-primary" onclick="openSidePanel()">
+        Sidomeny
+      </button>
       <!-- <div class="row" id="row"></div> -->
 
-    
-      <br>
-     <div>
-       <h1 style="text-align:center">Beställningar</h1>
-      <table class="table table-hover">
-        <thead>
-        
-          <tr>
-            <th scope="col">Ordernr</th>
-            <th scope="col">Datum</th>
-            <th scope="col">Namn</th>
-            <!-- <th scope="col">Email</th> -->
-            <!-- <th scope="col">Telefonnummer</th> -->
-            <th scope="col">Adress</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>2021-03-31</td>
-            <td>Kalle Svensson</td>
-            <td>Kallevägen 1</td>
-            <td>1000 kr</td>         
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>2021-03-11</td>
-            <td>Kalle Svensson</td>
-            <td>Kallevägen 1</td>
-            <td>10000 kr</td>         
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>2021-02-18</td>
-            <td>Kalle Svensson</td>
-            <td>Kallevägen 1</td>
-            <td>5000 kr</td>         
-          </tr>
-        </tbody>
-      </table>
-     </div>
+      <br />
+      <div>
+        <h1 style="text-align: center">Beställningar</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Ordernr</th>
+              <th scope="col">Datum</th>
+              <th scope="col">Namn</th>
+              <!-- <th scope="col">Email</th> -->
+              <!-- <th scope="col">Telefonnummer</th> -->
+              <th scope="col">Adress</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>2021-03-31</td>
+              <td>Kalle Svensson</td>
+              <td>Kallevägen 1</td>
+              <td>1000 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>2021-03-11</td>
+              <td>Kalle Svensson</td>
+              <td>Kallevägen 1</td>
+              <td>10000 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>2021-02-18</td>
+              <td>Kalle Svensson</td>
+              <td>Kallevägen 1</td>
+              <td>5000 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
         <!-- Footer Elements -->

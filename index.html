@@ -17,18 +17,22 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/navbar-script.js"></script>
+    <script src="scripts/sidepanel-script.js"></script>
 
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
     <link rel="stylesheet" href="styling/all-products.css" />
-    <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
-    <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
+    <link rel="stylesheet" href="styling/spacelab.css" type="text/css" />
+    <link rel="stylesheet" href="styling/footer-style.css" type="text/css" />
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+    >
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -65,16 +69,21 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
-    <div id="sidebar" class="sidebar"></div>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
+    </div>
 
     <!-- Page content -->
-    <div class="content">
+    <div id="main" class="content">
+      <button class="btn btn-outline-primary" onclick="openSidePanel()">
+        Sidomeny
+      </button>
       <div class="row" id="row"></div>
 
       <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
@@ -150,6 +159,8 @@
     </div>
 
     <script src="scripts/all-prodcuts.js"></script>
-    <script>renderAllProducts()</script>
+    <script>
+      renderAllProducts();
+    </script>
   </body>
 </html>

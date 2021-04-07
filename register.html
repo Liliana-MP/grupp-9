@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styling/footer-style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -79,13 +79,19 @@
           onsubmit="checkForm(this); return false;"
         >
           <label class="reg" for="firstname">Förnamn:</label>
-          <input id="firstname" type="text" placeholder="Förnamn" ><br />
+          <input id="firstname" type="text" placeholder="Förnamn" /><br />
           <label class="reg" for="lastname">Efternamn:</label>
           <input id="lastname" type="text" placeholder="Efternamn" /><br />
           <label class="reg" for="adress">Adress:</label>
           <input id="adress" type="text" placeholder="Adress" /><br />
           <label class="reg" for="postNr">Postnummer:</label>
-          <input id="zipCode" type="tel" minlength="5" maxlength="5" placeholder="Postnummer" /><br />
+          <input
+            id="zipCode"
+            type="tel"
+            minlength="5"
+            maxlength="5"
+            placeholder="Postnummer"
+          /><br />
           <label class="reg" for="ort">Ort:</label>
           <input id="county" type="text" placeholder="Ort" /><br />
           <label class="reg" for="mail">E-post:</label>

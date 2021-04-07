@@ -22,6 +22,18 @@ function fetchUser() {
 
 
      }
+     $("#btn-change-info").click(function(){
+      $("#form-lock").removeAttr("disabled");
+      // alert("Ändra funkar");
+    
+    });
+    $("#btn-save-info").click(function(){
+      
+      $("#form-lock").prop("disabled", true);
+      // alert("Spara funkar");
+    
+    });
 
-     
+
+
     });
