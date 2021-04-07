@@ -2,7 +2,6 @@ $(document).ready(function() {
   
 renderUser();
 
-editUser();
         });
 
         function editUser(userId){
@@ -10,7 +9,7 @@ editUser();
           userFromArray.forEach(e =>{
             // console.log(userId);
             if (e.id === userId){
-              sessionStorage.setItem("userToEdit", e.JSON.stringify());
+              sessionStorage.setItem("userToEdit", JSON.stringify(e));
               console.log("funkar")
             }
           });
@@ -55,7 +54,7 @@ editUser();
                         );
                     
 
-                    userObjects = { firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $zip, city: $cityId, email: $email, telefonnummer: $tNumber };
+                    userObjects = { id: $id, firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $zip, city: $cityId, email: $email, telefonnummer: $tNumber };
 
                     userFromDb.push(userObjects);
                   localStorage.setItem("userDb", JSON.stringify(userFromDb));
