@@ -17,6 +17,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/navbar-script.js"></script>
+    <script src="scripts/all-prodcuts.js"></script>
+    <script src="scripts/admin.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
@@ -73,7 +75,10 @@
     </nav>
 
 <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
       <a class="" href="admin-index.html">Admin</a>
       <a class="active" href="admin-product.html"> Produkter</a>
       <a href="">Kategorier</a>
@@ -84,7 +89,11 @@
     </div>
 
     <!-- Page content -->
-    <div class="content container" style="margin-top: 3.5rem;">
+    <button class="btn btn-outline-primary" onclick="openSidePanel()" style="margin-left: 0.5rem; margin-top: 4rem;">
+      Sidomeny
+    </button>
+    <div class="content container" id="main" style="margin-top: 3.5rem;">
+     
         <h1 class="text-center">Produkter Bree</h1>
     <div class="text-center" id="search-prod-div">
         <form >
@@ -200,7 +209,6 @@
       </footer>
     </div>
 
-    <script src="scripts/all-prodcuts.js"></script>
-    <script src="scripts/admin.js"></script>
+  
   </body>
 </html>

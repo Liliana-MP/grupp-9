@@ -1,5 +1,15 @@
 let resource = "./db.json"
 
+function openSidePanel(){
+  document.getElementById("sidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "auto";
+}
+
+function closeSidePanel(){
+  document.getElementById("sidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "auto";
+}
+
 
 async function validate_product(form) {
     let $name = $("#product-name").val()
