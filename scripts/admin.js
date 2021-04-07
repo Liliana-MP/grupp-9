@@ -10,7 +10,6 @@ function closeSidePanel(){
   document.getElementById("main").style.marginLeft = "auto";
 }
 
-
 async function validate_product(form) {
     let $name = $("#product-name").val()
     let $producer = $("#product-producer").val()
@@ -19,7 +18,6 @@ async function validate_product(form) {
     let $price = $("#product-price").val()
 
     const errorTxt = $("#alert-two")
-
 
     var responce = await fetch(resource)
     var data = await responce.json()
@@ -51,12 +49,8 @@ async function validate_product(form) {
     else {
       // funktion för att spara/ändra produkt i db
       form.submit()
-    }
-    
+    }    
   }
-
- 
-
 
   async function render_product(){
     let $product = $("#search-product").val()
@@ -88,13 +82,12 @@ async function validate_product(form) {
     }
     else errorTxt.text("* Produkten finns inte")
   }
-
   }
-
 
   async function remove_product(form){
     let $product = $("#search-product")
     const errorTxt = $("#alert-one")
+
     var responce = await fetch(resource)
     var data = await responce.json()
 
@@ -106,8 +99,160 @@ async function validate_product(form) {
     else {
        alert("borta")
        $(form).parent().submit()
-    // tabort produkt från db
-    
+    // tabort produkt från db    
   }
   }
   
+
+  async function validate_category(form) {
+    let $old = $("#category-name-old").val()
+    let $new = $("#category-name-new").val()
+    
+
+    const errorTxt = $("#alert-two")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.category.find(item => item.name.toUpperCase() == $old.toUpperCase())
+    const newCategory = data.category.find(item => item.name.toUpperCase() == $new.toUpperCase())
+
+    if ($old == "" && newCategory == undefined){
+      // funktion för att spara kategori till db
+      form.submit()
+    }
+    else if ($new == "") 
+        errorTxt.text("* Fyll i alla fälten korrekt")
+
+     else if (newCategory != undefined)
+     errorTxt.text("* Den nya kategorin finns redan")
+
+     else if(category == undefined)
+     errorTxt.text("* Kategorin finns inte i registret")
+   
+    else {
+      // funktion för att ändra kategori i db
+      form.submit()
+    }
+    
+  }
+
+
+  async function render_category(){
+    let $old = $("#category-name-old")
+    let $input = $("#search-category").val()
+
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    if ($input == "")
+    errorTxt.text("* Fyll i fältet")
+    else {
+      const category = data.category.find(item => item.name.toUpperCase() == $input.toUpperCase())
+  
+    if(category !== undefined){
+        $old.val(category.name)
+        errorTxt.text("")
+    }
+    else errorTxt.text("* Kategorin finns inte")
+  }
+  }
+
+
+  async function remove_category(form){
+    let $category = $("#search-category")
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.category.find(item => item.name.toUpperCase() == $category.val().toUpperCase())
+    if ($category.val() == "")
+    errorTxt.text("* Fyll i fältet")
+    else if (category == undefined)
+     errorTxt.text("* Kategorin finns inte")
+    else {
+       alert("borta")
+       $(form).parent().submit()
+    // tabort kategori från db    
+  }
+  }
+
+
+  async function validate_company(form) {
+    let $old = $("#company-name-old").val()
+    let $new = $("#company-name-new").val()
+    
+
+    const errorTxt = $("#alert-two")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const company = data.company.find(item => item.name.toUpperCase() == $old.toUpperCase())
+    const newCompany = data.company.find(item => item.name.toUpperCase() == $new.toUpperCase())
+
+    if ($old == "" && newCompany == undefined){
+      // funktion för att spara kategori till db
+      form.submit()
+    }
+    else if ($new == "") 
+        errorTxt.text("* Fyll i alla fälten korrekt")
+
+     else if (newCompany != undefined)
+     errorTxt.text("* Den nya Tillverkaren finns redan")
+
+     else if(company == undefined)
+     errorTxt.text("* Tillverkaren finns inte i registret")
+   
+    else {
+      // funktion för att ändra kategori i db
+      form.submit()
+    }
+    
+  }
+
+
+  async function render_company(){
+    let $old = $("#company-name-old")
+    let $input = $("#search-company").val()
+
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    if ($input == "")
+    errorTxt.text("* Fyll i fältet")
+    else {
+      const company = data.company.find(item => item.name.toUpperCase() == $input.toUpperCase())
+  
+    if(company !== undefined){
+        $old.val(company.name)
+        errorTxt.text("")
+    }
+    else errorTxt.text("* Tillverkaren finns inte")
+  }
+  }
+
+
+  async function remove_company(form){
+    let $company = $("#search-company")
+    const errorTxt = $("#alert-one")
+
+    var responce = await fetch(resource)
+    var data = await responce.json()
+
+    const category = data.company.find(item => item.name.toUpperCase() == $company.val().toUpperCase())
+    if ($company.val() == "")
+    errorTxt.text("* Fyll i fältet")
+    else if (category == undefined)
+     errorTxt.text("* Tillverkaren finns inte")
+    else {
+       alert("borta")
+       $(form).parent().submit()
+    // tabort kategori från db    
+  }
+  }
