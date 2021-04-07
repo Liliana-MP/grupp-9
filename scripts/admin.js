@@ -99,7 +99,7 @@ async function validate_product(form) {
     else {
        alert("borta")
        $(form).parent().submit()
-    // tabort produkt från db    
+    // ta bort produkt från db    
   }
   }
   
@@ -176,7 +176,7 @@ async function validate_product(form) {
     else {
        alert("borta")
        $(form).parent().submit()
-    // tabort kategori från db    
+    // ta bort kategori från db    
   }
   }
 
@@ -195,7 +195,7 @@ async function validate_product(form) {
     const newCompany = data.company.find(item => item.name.toUpperCase() == $new.toUpperCase())
 
     if ($old == "" && newCompany == undefined){
-      // funktion för att spara kategori till db
+      // funktion för att spara tillverkare till db
       form.submit()
     }
     else if ($new == "") 
@@ -208,7 +208,7 @@ async function validate_product(form) {
      errorTxt.text("* Tillverkaren finns inte i registret")
    
     else {
-      // funktion för att ändra kategori i db
+      // funktion för att ändra tillverkare i db
       form.submit()
     }
     
@@ -253,6 +253,6 @@ async function validate_product(form) {
     else {
        alert("borta")
        $(form).parent().submit()
-    // tabort kategori från db    
+    // ta bort tillverkare från db    
   }
   }
