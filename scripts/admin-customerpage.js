@@ -2,9 +2,19 @@ $(document).ready(function() {
   
 renderUser();
 
-
-
+editUser();
         });
+
+        function editUser(userId){
+          const userFromArray = JSON.parse(localStorage.getItem("userDb"));
+          userFromArray.forEach(e =>{
+            // console.log(userId);
+            if (e.id === userId){
+              sessionStorage.setItem("userToEdit", e.JSON.stringify());
+              console.log("funkar")
+            }
+          });
+        }
 
         function renderUser(){
             let userArray = [];
@@ -17,21 +27,21 @@ renderUser();
               }
               
                 response.json().then(function(data){
-                  
+                  let userFromDb = [];
                   // Renderar ut produkter
                     data.user.forEach(element => {
                         
-                    // $id = element.id;
-                    // $firstname = element.firstname;
-                    // $lastname = element.lastname;
-                    // $email = element.email;
-                    // $tNumber = element.phonenumber;
-                    // $adress = element.address;
-                    // $zip = element.zipcode;
-                    // $cityId = element.city;
+                    $id = element.id;
+                    $firstname = element.firstname;
+                    $lastname = element.lastname;
+                    $email = element.email;
+                    $tNumber = element.phonenumber;
+                    $adress = element.address;
+                    $zip = element.zipcode;
+                    $cityId = element.city;
 
                     $("#table-customer").append(
-                        `<tr>
+                        `<tr onclick="editUser(${element.id})">
                         <th scope="row">${element.id}</th>
                         <td>${element.firstname}</td>
                         <td>${element.lastname}</td>
@@ -43,30 +53,22 @@ renderUser();
                       </tr>`
 
                         );
+                    
 
-                
-                    // console.log($id);
-                    //   if(getCategoryId == 0){
-                    //     product(element)
-                    // }else{
-                     
-                    //   if(getCategoryId == element.categoryid)
-                    //   product(element)
-                    // } 
-                    // console.log(element)
-                    })
-                //     sessionStorage.setItem("products",JSON.stringify(userArray))
-                //     sessionStorage.setItem("categorys", JSON.stringify(data.category))
-                
-                //   renderCategory(data)
+                    userObjects = { firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $zip, city: $cityId, email: $email, telefonnummer: $tNumber };
 
-
-                  const userFromDb = { firstname: $firstname, lastname: $lastname, adress: $adress, zipcode: $zip, city: $cityId, email: $email, telefonnummer: $tNumber };
+                    userFromDb.push(userObjects);
                   localStorage.setItem("userDb", JSON.stringify(userFromDb));
+
                 
-                  const getUser= JSON.parse(localStorage.getItem("userDb"));
-                  console.log(getUser);
+            
+                  var getUser= JSON.parse(localStorage.getItem("userDb"));
+     
+                    })
+           
+
             
                 })
             })
+            
             }
