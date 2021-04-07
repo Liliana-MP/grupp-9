@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styling/all-products.css" />
     <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
     <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
+    <link rel="stylesheet" href="./styling/sidebar.css" type="text/css" />
     <link
       rel="stylesheet"
       href="./styling/customer-index.css"
@@ -77,8 +78,8 @@
       </div>
     </nav>
 
-    <div id="sidebar" class="sidebar">
-      <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+    <!-- <div id="sidebar" class="sidebar">
+
       <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
         >&times;</a
       >
@@ -86,13 +87,29 @@
       <a class="active" href="admin-customerpage.html"> Kunder</a>
       <a href="customer-discounts.html">Erbjudanden</a>
       <a href="delete-profile.html">Ta bort profil</a>
+    </div> -->
+
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
+        >&times;</a
+      >
+      <a href="admin-index.html">Admin</a>
+      <a class="" href="admin-product.html"> Produkter</a>
+      <a href="admin-category.html">Kategorier</a>
+      <a href="">Beställningar</a>
+      <a class="active" href="admin-customerpage.html">Kunder</a>
     </div>
 
     <!-- Page content -->
-    <div id="main" class="content">
+    <button class="btn btn-outline-primary" onclick="openSidePanel()" style="margin-left: 0.5rem;margin-top: 4rem;">
+      Sidomeny
+    </button>
+
+    <!-- Page content -->
+    <!-- <div id="main" class="content">
       <button class="btn btn-outline-primary" onclick="openSidePanel()">
         Sidomeny
-      </button>
+      </button> -->
       <!-- <div class="row" id="row"></div> -->
 
       <br />
