@@ -38,7 +38,10 @@ async function validate_product(form) {
      else if($price <= 0)
      errorTxt.text("* Pris måste vara över 0")
      
-    else form.submit()
+    else {
+      // funktion för att spara/ändra produkt i db
+      form.submit()
+    }
     
   }
 
@@ -58,23 +61,43 @@ async function validate_product(form) {
     var responce = await fetch(resource)
     var data = await responce.json()
 
-    const product = data.product.find(item => item.name.toUpperCase() == $product.toUpperCase())
-    const producer = await data.company.find(item => item.id == product.companyid)
-    const category = await data.category.find(item => item.id == product.categoryid)
-    
+    if ($product == "")
+    errorTxt.text("* Fyll i fältet")
+    else {
+      const product = data.product.find(item => item.name.toUpperCase() == $product.toUpperCase())
+  
     if(product !== undefined){
+      const producer = await data.company.find(item => item.id == product.companyid)
+      const category = await data.category.find(item => item.id == product.categoryid)
         $name.val(product.name)
         $producer.val(producer.name)
         $category.val(category.name)
         $quantity.val(product.quantity)
         $price.val(product.price)
+        errorTxt.text("")
     }
     else errorTxt.text("* Produkten finns inte")
+  }
 
   }
 
 
-  function remove_product(){
+  async function remove_product(form){
+    let $product = $("#search-product")
+    const errorTxt = $("#alert-one")
+    var responce = await fetch(resource)
+    var data = await responce.json()
 
+    const product = data.product.find(item => item.name.toUpperCase() == $product.val().toUpperCase())
+    if ($product.val() == "")
+    errorTxt.text("* Fyll i fältet")
+    else if (product == undefined)
+     errorTxt.text("* Produkten finns inte")
+    else {
+       alert("borta")
+       $(form).parent().submit()
+    // tabort produkt från db
+    
+  }
   }
   
