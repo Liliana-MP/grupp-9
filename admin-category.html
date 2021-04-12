@@ -24,14 +24,16 @@
     <link rel="stylesheet" href="styling/sidebar.css" />
     <link rel="stylesheet" href="styling/all-products.css" />
     <link rel="stylesheet" href="styling/spacelab.css" />
-    <link rel="stylesheet" href="styling/footer-style.css"/>
-    <link rel="stylesheet" href="styling/admin.css">
-
+    <link rel="stylesheet" href="styling/footer-style.css" />
+    <link rel="stylesheet" href="styling/admin.css" />
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    >
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -68,13 +70,11 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
-<!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+    <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
     <div class="sidebar" id="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
         >&times;</a
@@ -83,56 +83,84 @@
       <a class="" href="admin-product.html"> Produkter</a>
       <a class="active" href="admin-category.html">Kategorier</a>
       <a class="" href="admin-company.html">Tillverkare</a>
-      <a href="">Beställningar</a>
+      <a href="admin-order.html">Beställningar</a>
       <a href="">Kunder</a>
-      
     </div>
 
     <!-- Page content -->
-    <button class="btn btn-outline-primary" onclick="openSidePanel()" style="margin-left: 0.5rem; margin-top: 4rem;">
+    <button
+      class="btn btn-outline-primary"
+      onclick="openSidePanel()"
+      style="margin-left: 0.5rem; margin-top: 4rem"
+    >
       Sidomeny
     </button>
-    <div class="content container" id="main" style="margin-top: 1px;">
-     
-        <h1 class="text-center">Kategorier</h1>
-    <div class="text-center" id="search-prod-div">
-        <form >
-            <label class="reg" for="search-category">Sök kategori: </label>
-            <input type="text" id="search-category" style="margin-bottom: 0rem;" placeholder="Kategori namn">
-            <br>
-            <small
-              class="font-weight-bold"
-              style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-              id="alert-one"
-            ></small>
-            <br>
-            <button class="btn btn-outline-primary" style="margin-left: 7.1rem" onclick="render_category(); return false;">Redigera</button>
-            <button class="btn btn-outline-primary" onclick="remove_category(this); return false;">Ta bort</button>
+    <div class="content container" id="main" style="margin-top: 1px">
+      <h1 class="text-center">Kategorier</h1>
+      <div class="text-center" id="search-prod-div">
+        <form>
+          <label class="reg" for="search-category">Sök kategori: </label>
+          <input
+            type="text"
+            id="search-category"
+            style="margin-bottom: 0rem"
+            placeholder="Kategori namn"
+          />
+          <br />
+          <small
+            class="font-weight-bold"
+            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+            id="alert-one"
+          ></small>
+          <br />
+          <button
+            class="btn btn-outline-primary"
+            style="margin-left: 7.1rem"
+            onclick="render_category(); return false;"
+          >
+            Redigera
+          </button>
+          <button
+            class="btn btn-outline-primary"
+            onclick="remove_category(this); return false;"
+          >
+            Ta bort
+          </button>
         </form>
-    </div>
+      </div>
 
-    <div class="text-center" id="content" style="margin-top: 1rem;">
+      <div class="text-center" id="content" style="margin-top: 1rem">
         <h3>Redigera / Lägg till kategori</h3>
         <form onsubmit="validate_category(this); return false;">
-            <label class="reg" for="category-name-old">Tidigare:</label>
-            <input id="category-name-old" type="text" placeholder="Kategori namn" ><br />
-            <label class="reg" for="category-name-new">Nytt:</label>
-            <input id="category-name-new" type="text" placeholder="Kategori namn" ><br />
-            <small
-              class="font-weight-bold"
-              style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-              id="alert-two"
-            ></small>
-            <br>
-            <input class="btn btn-outline-primary" style="margin-left: 14rem;" type="submit" value="Spara">
-
+          <label class="reg" for="category-name-old">Tidigare:</label>
+          <input
+            id="category-name-old"
+            type="text"
+            placeholder="Kategori namn"
+          /><br />
+          <label class="reg" for="category-name-new">Nytt:</label>
+          <input
+            id="category-name-new"
+            type="text"
+            placeholder="Kategori namn"
+          /><br />
+          <small
+            class="font-weight-bold"
+            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
+            id="alert-two"
+          ></small>
+          <br />
+          <input
+            class="btn btn-outline-primary"
+            style="margin-left: 14rem"
+            type="submit"
+            value="Spara"
+          />
         </form>
-    </div>
+      </div>
 
-        
-     
-   <!-- Footer Elements -->
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4 ">
+      <!-- Footer Elements -->
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4">
         <div class="container">
           <hr />
           <br />
@@ -202,7 +230,5 @@
         </div>
       </footer>
     </div>
-
-  
   </body>
 </html>

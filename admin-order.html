@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Produkter</title>
+    <title>customer-orders</title>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -19,6 +19,8 @@
     <script src="scripts/navbar-script.js"></script>
     <script src="scripts/all-prodcuts.js"></script>
     <script src="scripts/admin.js"></script>
+    <script src="scripts/sidepanel-script.js"></script>
+    <script src="scripts/admin-orders.js"></script>
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
@@ -74,91 +76,48 @@
       </div>
     </nav>
 
-    <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
     <div class="sidebar" id="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
         >&times;</a
       >
       <a class="" href="admin-index.html">Admin</a>
-      <a class="active" href="admin-product.html"> Produkter</a>
-      <a class="" href="admin-category.html">Kategorier</a>
-      <a class="" href="admin-company.html">Tillverkare</a>
-      <a href="admin-order.html">Beställningar</a>
+      <a class="" href="admin-product.html"> Produkter</a>
+      <a href="admin-category.html">Kategorier</a>
+      <a href="admin-company.html">Tillverkare</a>
+      <a class="active" href="admin-order.html">Beställningar</a>
       <a href="">Kunder</a>
     </div>
 
     <!-- Page content -->
-    <button
-      class="btn btn-outline-primary"
-      onclick="openSidePanel()"
-      style="margin-left: 0.5rem; margin-top: 4rem"
-    >
-      Sidomeny
-    </button>
-    <div class="content container" id="main" style="margin-top: 1px">
-      <h1 class="text-center">Produkter</h1>
-      <div class="text-center" id="search-prod-div">
-        <form>
-          <label class="reg" for="search-product">Sök produkt: </label>
-          <input
-            type="text"
-            id="search-product"
-            style="margin-bottom: 0rem"
-            placeholder="Produkt namn"
-          />
-          <br />
-          <small
-            class="font-weight-bold"
-            style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-            id="alert-one"
-          ></small>
-          <br />
-          <button
-            class="btn btn-outline-primary"
-            style="margin-left: 7.1rem"
-            onclick="render_product(); return false;"
-          >
-            Redigera
-          </button>
-          <button
-            class="btn btn-outline-primary"
-            onclick="remove_product(this); return false;"
-          >
-            Ta bort
-          </button>
-        </form>
+    <div id="main" class="content">
+      <button
+        class="btn btn-outline-primary"
+        onclick="openSidePanel()"
+        id="sidepanel-btn"
+      >
+        Sidomeny
+      </button>
+      <div>
+        <h1 style="text-align: center">Beställningar</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Ordernr</th>
+              <th scope="col">Datum</th>
+              <th scope="col">Namn</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telefonnummer</th>
+              <th scope="col">Adress</th>
+              <th scope="col">Total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="order-table"></tbody>
+        </table>
       </div>
 
-      <div class="text-center" id="content" style="margin-top: 1rem">
-        <h3>Redigera / lägg till produkt</h3>
-        <form onsubmit="validate_product(this); return false;">
-            <label class="reg" for="product-name">Namn:</label>
-            <input id="product-name" type="text" placeholder="Produkt namn" ><br />
-            <label class="reg" for="product-producer">Tillverkare:</label>
-            <input id="product-producer" type="text" placeholder="Tillverkare" /><br />
-            <label class="reg" for="product-category">Kategori:</label>
-            <input id="product-category" type="text" placeholder="Kategori" /><br />
-            <label class="reg" for="product-quantity">Antal:</label>
-            <input id="product-quantity" type="tel" placeholder="Antal" /><br />
-            <label class="reg" for="product-price">Pris:</label>
-            <input id="product-price" type="tel" placeholder="Pris" /><br />
-            <label class="reg" for="product-image">Bild:</label>
-            <input id="product-image" type="file" style="width: 12.7rem";> <br>
-            <label for="product-description">Beskrivning</label><br>
-            <textarea id="product-description" cols="30" rows="10"></textarea><br>
-            <small
-              class="font-weight-bold"
-              style="margin-bottom: 1rem; margin-top: 0rem; color: #ff0000"
-              id="alert-two"
-            ></small>
-            <br>
-            <input class="btn btn-outline-primary" style="margin-left: 14rem;" type="submit" value="Spara">
-
-        </form>
-      </div>
-
-      <!-- Footer Elements -->
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+      <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+        <!-- Footer Elements -->
         <div class="container">
           <hr />
           <br />
