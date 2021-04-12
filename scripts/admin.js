@@ -16,6 +16,7 @@ async function validate_product(form) {
     let $category = $("#product-category").val()
     let $quantity = $("#product-quantity").val()
     let $price = $("#product-price").val()
+    let $description = $("#product-description").val()
 
     const errorTxt = $("#alert-two")
 
@@ -45,6 +46,9 @@ async function validate_product(form) {
 
      else if($price <= 0)
      errorTxt.text("* Pris måste vara över 0")
+
+     else if ($description == "")
+     errorTxt.text("* Fyll i beskrivningen")
      
     else {
       // funktion för att spara/ändra produkt i db
@@ -59,6 +63,7 @@ async function validate_product(form) {
     let $category = $("#product-category")
     let $quantity = $("#product-quantity")
     let $price = $("#product-price")
+    let $description = $("#product-description")
 
     const errorTxt = $("#alert-one")
 
@@ -78,6 +83,7 @@ async function validate_product(form) {
         $category.val(category.name)
         $quantity.val(product.quantity)
         $price.val(product.price)
+        $description.val(product.description)
         errorTxt.text("")
     }
     else errorTxt.text("* Produkten finns inte")
