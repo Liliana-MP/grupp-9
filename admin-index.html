@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>customer-orders</title>
+    <title>Admin - Start</title>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -23,15 +23,17 @@
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/sidebar.css" />
     <link rel="stylesheet" href="styling/all-products.css" />
-    <link rel="stylesheet" href="./styling/spacelab.css" type="text/css" />
-    <link rel="stylesheet" href="./styling/footer-style.css" type="text/css" />
-    <link rel="stylesheet" href="./styling/customer-index.css" type="text/css" />
-
+    <link rel="stylesheet" href="styling/spacelab.css" />
+    <link rel="stylesheet" href="styling/footer-style.css" />
+    <link rel="stylesheet" href="styling/customer-index.css" />
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    >
       <a class="navbar-brand" href="#">Hakims livs</a>
       <button
         class="navbar-toggler"
@@ -68,36 +70,35 @@
           </button>
         </form>
 
-        <form id="right-nav-form" class="form-inline my-2 my-lg-0">
-          
-        </form>
+        <form id="right-nav-form" class="form-inline my-2 my-lg-0"></form>
       </div>
     </nav>
 
-<!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
+    <!-- ett formulär som håller uppgifter, sen en knapp som låser upp formulär för ändringar  -->
     <div class="sidebar" id="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeSidePanel()"
         >&times;</a
       >
       <a class="active" href="admin-index.html">Admin</a>
       <a class="" href="admin-product.html"> Produkter</a>
-      <a href="admin-category.html">Kategorier</a>
-      <a href="">Beställningar</a>
-      <a href="admin-customerpage.html">Kunder</a>
+      <a class="" href="admin-category.html">Kategorier</a>
+      <a class="" href="admin-company.html">Tillverkare</a>
+      <a href="admin-order.html">Beställningar</a>
+      <a href="">Kunder</a>
     </div>
 
     <!-- Page content -->
-    <button class="btn btn-outline-primary" onclick="openSidePanel()" style="margin-left: 0.5rem;margin-top: 4rem;">
+    <button
+      class="btn btn-outline-primary"
+      onclick="openSidePanel()"
+      style="margin-left: 0.5rem; margin-top: 4rem"
+    >
       Sidomeny
     </button>
-    <div class="content container " id="main" style="margin-top: 0.5rem;">
+    <div class="content container" id="main" style="margin-top: 1px">
+      <h1 class="text-center">ADMIN</h1>
 
-      <h1 class="text-center">ADMIN BREEE</h1>
-      
-
-        
-     
-   <!-- Footer Elements -->
+      <!-- Footer Elements -->
       <footer class="page-footer font-small mdb-color lighten-3 pt-4">
         <div class="container">
           <hr />
@@ -168,7 +169,5 @@
         </div>
       </footer>
     </div>
-
-
   </body>
 </html>

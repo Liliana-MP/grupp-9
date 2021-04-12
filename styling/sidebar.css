@@ -50,3 +50,12 @@
     font-size: 18px;
   }
 }
+
+@media print {
+  #sidepanel-btn {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+}
