@@ -32,7 +32,7 @@ function updateTotal() {
   $("#total-amount").text(total.toFixed(2) + " SEK")
 }
 
-
+/*
 $(document).ready(function() {
   fetchUser();
   function fetchUser() {
@@ -56,6 +56,7 @@ $(document).ready(function() {
   
        }  
   });
+  */
 
   let resource = "./db.json"
   const $alert = $("#alert");
@@ -88,6 +89,12 @@ async function checkForm(form) {
       $alert.text("* Adressen måste ha mer än 2 bokstäver")
     } 
     else {
-      form.submit();
+      sendOrder(form)
     }
+  }
+
+  function sendOrder(){
+    axios.post("http://localhost:8080/orders/add")
+    .then(res )
+
   }
