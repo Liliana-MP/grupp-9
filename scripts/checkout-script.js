@@ -61,7 +61,7 @@ $(document).ready(function() {
   let resource = "./db.json"
   const $alert = $("#alert");
 
-async function checkForm(form) {
+function checkForm(form) {
     
     let $firstname = $("#fName").val();
     let $lastname = $("#lName").val();
@@ -93,8 +93,36 @@ async function checkForm(form) {
     }
   }
 
-  function sendOrder(){
-    axios.post("http://localhost:8080/orders/add")
-    .then(res )
+ async function sendOrder(form){
+    let $firstname = $("#fName").val();
+    let $lastname = $("#lName").val();
+    let $adress = $("#adrs").val();
+    let $zipCode = $("#zip").val();
+    let products = new Array()
+    
+    let $customer2 = JSON.stringify({
+      firstName: $firstname,
+      lastName: $lastname,
+      city: $adress,
+      zipCode: $zipCode
+    })
+
+    let $customer = new FormData()
+    $customer.append("lastName", $lastname)
+    $customer.append("firstName", $firstname)
+
+    console.log($customer)
+
+
+   const shit = await axios.post('http://localhost:8080/orders/add',
+    {
+      customer: $customer2
+    },
+      {headers:{"Content-Type" : "application/json"}})
+    .then(res => {if(res.data == "Order added")
+  console.log(res)
+else
+$alert.text("* Något gick fel")})
+.catch(err => console.error(err))
 
   }
