@@ -114,12 +114,14 @@ function checkForm(form) {
     console.log(customer1);
 
 
-  axios.get('http://localhost:8080/orders/add',
+  axios.post('http://localhost:8080/orders/add',
     {
-          "firstName": $firstname,
-          "lastName": $lastname,
-          "zipCode": $zipCode
-        
+      date: new Date(),
+      customer: {firstName: $firstname,
+                lastName: $lastname,
+                city: $adress,
+                zipCode: $zipCode
+        }
     },
       {headers:{"Content-Type" : "application/json"}})
     .then(res => {if(res.data == "Order added")
