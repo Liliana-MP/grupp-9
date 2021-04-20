@@ -100,23 +100,26 @@ function checkForm(form) {
     let $zipCode = $("#zip").val();
     let products = new Array()
     
-    let $customer2 = JSON.stringify({
-      firstName: $firstname,
-      lastName: $lastname,
-      city: $adress,
-      zipCode: $zipCode
-    })
+    let customer1 = {
+      "firstName": $firstname,
+      "lastName": $lastname,
+      "zipCode": $zipCode
+    }
+/*
+    let customer3 = new FormData()
+    customer.append("firstName", $firstname)
+    customer.append("lastname", $lastname)
+*/
 
-    let $customer = new FormData()
-    $customer.append("lastName", $lastname)
-    $customer.append("firstName", $firstname)
-
-    console.log($customer)
+    console.log(customer1);
 
 
-   const shit = await axios.post('http://localhost:8080/orders/add',
+  axios.get('http://localhost:8080/orders/add',
     {
-      customer: $customer2
+          "firstName": $firstname,
+          "lastName": $lastname,
+          "zipCode": $zipCode
+        
     },
       {headers:{"Content-Type" : "application/json"}})
     .then(res => {if(res.data == "Order added")
