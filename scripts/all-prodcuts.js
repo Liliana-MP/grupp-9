@@ -37,8 +37,9 @@ function fetchAllCategories() {
 
     response.json().then(function (data) {
       sessionStorage.setItem("categorys", JSON.stringify(data.category));
-      console.log(data);
-      renderCategory(data);
+      data.forEach((element) => {
+        renderCategory(element);
+      });
     });
   });
 }
