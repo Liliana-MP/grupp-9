@@ -24,6 +24,7 @@ function renderAllProducts() {
       sessionStorage.setItem("products", JSON.stringify(objectArray));
     });
   });
+  fetchAllCategories();
 }
 
 function fetchAllCategories() {
@@ -36,10 +37,9 @@ function fetchAllCategories() {
     }
 
     response.json().then(function (data) {
-      sessionStorage.setItem("categorys", JSON.stringify(data.category));
-      data.forEach((element) => {
-        renderCategory(element);
-      });
+      console.log(data);
+      sessionStorage.setItem("categorys", JSON.stringify(data));
+      renderCategory(data);
     });
   });
 }
@@ -52,7 +52,7 @@ function renderCategory(data) {
   if (getCategoryId == 0) $active = "active";
   $row = `<a id="0" class="category ${$active}" href="index.html">Alla produkter</a>`;
   $sidebar.append($row);
-  data.category.forEach((element) => {
+  data.forEach((element) => {
     if (element.id == getCategoryId) {
       $active = "active";
     } else {
@@ -72,7 +72,7 @@ function product(element) {
   <div class="card border-dark mb-3" style="max-width: 20rem">
   <div class="card-header" onclick="renderProduct(${element.id})" >${element.name}</div>
   <div class="card-body">
-      <img class="img-thumbnail" onclick="renderProduct(${element.id})" src=${element.image} alt="bild på ${element.name}" >
+      <img class="img-thumbnail" onclick="renderProduct(${element.id})" src=${element.picture} alt="bild på ${element.name}" >
       
       <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
     <p class="product-price">
