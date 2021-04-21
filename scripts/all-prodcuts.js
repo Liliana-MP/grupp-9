@@ -76,7 +76,7 @@ function product(element) {
       
       <textarea class="img-thumbnail" readonly style="resize: none" cols="30" rows="5"> ${element.description}</textarea>
     <p class="product-price">
-      ${element.price}
+      ${element.price} SEK
     </p>
     <button type="button" class="btn btn-outline-success" onclick="locateObject(${element.id})">Köp</button>
   </div>
