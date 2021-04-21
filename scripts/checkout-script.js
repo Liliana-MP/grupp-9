@@ -100,18 +100,10 @@ function checkForm(form) {
     let $zipCode = $("#zip").val();
     let products = new Array()
     
-    let customer1 = {
-      "firstName": $firstname,
-      "lastName": $lastname,
-      "zipCode": $zipCode
-    }
-/*
-    let customer3 = new FormData()
-    customer.append("firstName", $firstname)
-    customer.append("lastname", $lastname)
-*/
-
-    console.log(customer1);
+    product.forEach(element => products.push(
+      {product:{id:element.id, name:element.name},
+      quantity:element.quantityInCart}))
+    
 
 
   axios.post('http://localhost:8080/orders/add',
@@ -121,7 +113,8 @@ function checkForm(form) {
                 lastName: $lastname,
                 city: $adress,
                 zipCode: $zipCode
-        }
+        },
+      products: products
     },
       {headers:{"Content-Type" : "application/json"}})
     .then(res => {if(res.data == "Order added")
