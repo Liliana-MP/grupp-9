@@ -90,6 +90,7 @@ function checkForm(form) {
     } 
     else {
       sendOrder(form)
+      localStorage.removeItem("productsInCart")
     }
   }
 
@@ -101,12 +102,12 @@ function checkForm(form) {
     let products = new Array()
     
     product.forEach(element => products.push(
-      {product:{id:element.id, name:element.name},
+      {product:{id:element.id},
       quantity:element.quantityInCart}))
     
 
 
-  axios.post('http://localhost:8080/orders/add',
+  axios.post('https://projekt-grupp9.herokuapp.com/orders/add',
     {
       date: new Date(),
       customer: {firstName: $firstname,
@@ -118,7 +119,7 @@ function checkForm(form) {
     },
       {headers:{"Content-Type" : "application/json"}})
     .then(res => {if(res.data == "Order added")
-  console.log(res)
+  form.submit()
 else
 $alert.text("* Något gick fel")})
 .catch(err => console.error(err))
