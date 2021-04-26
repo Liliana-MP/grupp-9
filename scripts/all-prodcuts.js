@@ -18,7 +18,7 @@ function renderAllProducts() {
         if (getCategoryId == 0) {
           product(element);
         } else {
-          if (getCategoryId == element.categoryid) product(element);
+          if (getCategoryId == element.category.id) product(element);
         }
       });
       sessionStorage.setItem("products", JSON.stringify(objectArray));
