@@ -4,7 +4,7 @@ var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || [];
 const getCategoryId = sessionStorage.getItem("categoryId") || 0;
 
 function renderAllProducts() {
-  fetch("https://projekt-grupp9.herokuapp.com/products/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/product/all").then(function (
     response
   ) {
     if (response.status !== 200) {
@@ -18,7 +18,7 @@ function renderAllProducts() {
         if (getCategoryId == 0) {
           product(element);
         } else {
-          if (getCategoryId == element.categoryid) product(element);
+          if (getCategoryId == element.category.id) product(element);
         }
       });
       sessionStorage.setItem("products", JSON.stringify(objectArray));
@@ -28,7 +28,7 @@ function renderAllProducts() {
 }
 
 function fetchAllCategories() {
-  fetch("https://projekt-grupp9.herokuapp.com/categories/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/category/all").then(function (
     response
   ) {
     if (response.status !== 200) {
