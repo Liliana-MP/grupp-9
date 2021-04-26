@@ -4,7 +4,7 @@ var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || [];
 const getCategoryId = sessionStorage.getItem("categoryId") || 0;
 
 function renderAllProducts() {
-  fetch("https://projekt-grupp9.herokuapp.com/product/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/products/all").then(function (
     response
   ) {
     if (response.status !== 200) {
@@ -28,7 +28,7 @@ function renderAllProducts() {
 }
 
 function fetchAllCategories() {
-  fetch("https://projekt-grupp9.herokuapp.com/category/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/categories/all").then(function (
     response
   ) {
     if (response.status !== 200) {
@@ -99,7 +99,6 @@ function locateObject(id) {
   addToCart(foundObject);
 }
 
-// Vi måste minska quantity i DB (vet ej om det behövs göras i json filen just nu)
 function addToCart(object) {
   const findProduct = cartArray.find((element) => element.id == object.id);
 
