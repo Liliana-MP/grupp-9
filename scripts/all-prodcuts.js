@@ -99,7 +99,6 @@ function locateObject(id) {
   addToCart(foundObject);
 }
 
-// Vi måste minska quantity i DB (vet ej om det behövs göras i json filen just nu)
 function addToCart(object) {
   const findProduct = cartArray.find((element) => element.id == object.id);
 
