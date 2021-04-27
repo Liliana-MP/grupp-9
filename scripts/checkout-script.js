@@ -63,10 +63,14 @@ const $alert = $("#alert");
 function checkForm(form) {
   let $firstname = $("#fName").val();
   let $lastname = $("#lName").val();
+  let $city = $("#city").val();
   let $adress = $("#adrs").val();
   let $zipCode = $("#zip").val();
+  let $email = $("#email").val();
+  let $phoneNumber = $("#phoneNumber").val();
+  
 
-  if ($firstname == "" || $lastname == "" || $adress == "" || $zipCode == "") {
+  if ($firstname == "" || $lastname == "" || $adress == "" || $zipCode == "" || $city == "" || $email == "" || $phoneNumber == "") {
     $alert.text("* Fyll i alla fälten");
   } else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
@@ -76,16 +80,31 @@ function checkForm(form) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
   } else if ($adress.length <= 2) {
     $alert.text("* Adressen måste ha mer än 2 bokstäver");
+  } else if (!isNaN($city)) {
+    $alert.text("* Enbart bokstäver i ort fältet");
+  } else if (!validateEmail($email)) {
+    $alert.text("* Felaktig E-Mail adress");
+  } else if (isNaN($phoneNumber)) {
+    $alert.text("* Enbart siffror i telefonnummer fältet");
   } else {
     sendOrder(form);
   }
 }
 
+function validateEmail(email){
+        //var re = /^[^\s@]+@[^\s@]+$/;
+        var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        return re.test(email);
+    }
+
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
   let $lastname = $("#lName").val();
+  let $city = $("#city").val();
   let $adress = $("#adrs").val();
   let $zipCode = $("#zip").val();
+  let $email = $("#email").val();
+  let $phoneNumber = $("#phoneNumber").val();
   let products = new Array();
 
   product.forEach((element) =>
@@ -103,8 +122,11 @@ async function sendOrder(form) {
         customer: {
           firstName: $firstname,
           lastName: $lastname,
-          city: $adress,
+          city: $city,
+          adress: $adress,
           zipCode: $zipCode,
+          email: $email,
+          phoneNumber: $phoneNumber
         },
         products: products,
       },
