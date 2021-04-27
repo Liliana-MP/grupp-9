@@ -68,9 +68,16 @@ function checkForm(form) {
   let $zipCode = $("#zip").val();
   let $email = $("#email").val();
   let $phoneNumber = $("#phoneNumber").val();
-  
 
-  if ($firstname == "" || $lastname == "" || $adress == "" || $zipCode == "" || $city == "" || $email == "" || $phoneNumber == "") {
+  if (
+    $firstname == "" ||
+    $lastname == "" ||
+    $adress == "" ||
+    $zipCode == "" ||
+    $city == "" ||
+    $email == "" ||
+    $phoneNumber == ""
+  ) {
     $alert.text("* Fyll i alla fälten");
   } else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
@@ -91,11 +98,11 @@ function checkForm(form) {
   }
 }
 
-function validateEmail(email){
-        //var re = /^[^\s@]+@[^\s@]+$/;
-        var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        return re.test(email);
-    }
+function validateEmail(email) {
+  //var re = /^[^\s@]+@[^\s@]+$/;
+  var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  return re.test(email);
+}
 
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
@@ -126,7 +133,7 @@ async function sendOrder(form) {
           adress: $adress,
           zipCode: $zipCode,
           email: $email,
-          phoneNumber: $phoneNumber
+          phoneNumber: $phoneNumber,
         },
         products: products,
       },
@@ -143,13 +150,19 @@ function saveInfo() {
   let infoArray = [];
   let $firstname = $("#fName").val();
   let $lastname = $("#lName").val();
+  let $city = $("#city").val();
   let $adress = $("#adrs").val();
   let $zipCode = $("#zip").val();
+  let $email = $("#email").val();
+  let $phoneNumber = $("#phoneNumber").val();
   let customer = {
     firstName: $firstname,
     lastName: $lastname,
+    city: $city,
     adress: $adress,
     zipCode: $zipCode,
+    email: $email,
+    phoneNumber: $phoneNumber,
   };
   infoArray.push(customer);
   sessionStorage.setItem("Customer", JSON.stringify(infoArray));

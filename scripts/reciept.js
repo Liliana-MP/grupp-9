@@ -20,7 +20,10 @@ function getCustomerFromSessionStorage() {
       customer.firstName,
       customer.lastName,
       customer.adress,
-      customer.zipCode
+      customer.zipCode,
+      customer.city,
+      customer.email,
+      customer.phoneNumber
     );
   });
 }
@@ -39,16 +42,25 @@ function createDataInCart(name, price, quantity) {
   updateTotal();
 }
 
-function createCustomerData(firstName, lastName, adress, zipcode) {
+function createCustomerData(
+  firstName,
+  lastName,
+  adress,
+  zipcode,
+  city,
+  email,
+  phoneNumber
+) {
   document.getElementById("customer-info").innerHTML += `
     <tbody>
     <tr class="table-active">
       <td scope="row">${firstName}</td>
       <td>${lastName}</td>
       <td>${adress}</td>
-      <td>
-        <span>${zipcode}</span>
-      </td>
+      <td>${zipcode}</td>
+      <td>${city}</td>
+      <td>${email}</td>
+      <td>${phoneNumber}</td>
     </tr>
   </tbody>`;
 }
