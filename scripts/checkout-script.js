@@ -87,7 +87,6 @@ function checkForm(form) {
   } else if (isNaN($phoneNumber)) {
     $alert.text("* Enbart siffror i telefonnummer fältet");
   } else {
-    console.log("sendOrder")
     sendOrder(form);
     localStorage.removeItem("productsInCart");
   }
@@ -96,7 +95,6 @@ function checkForm(form) {
 function validateEmail(email){
         //var re = /^[^\s@]+@[^\s@]+$/;
         var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        console.log(email);
         return re.test(email);
     }
 
@@ -119,7 +117,7 @@ async function sendOrder(form) {
 
   axios
     .post(
-      "https://localhost:8080/order/all",
+      "https://projekt-grupp9.herokuapp.com/order/add",
       {
         date: new Date(),
         customer: {
