@@ -87,6 +87,7 @@ function checkForm(form) {
   } else if (isNaN($phoneNumber)) {
     $alert.text("* Enbart siffror i telefonnummer fältet");
   } else {
+    console.log("sendOrder")
     sendOrder(form);
     localStorage.removeItem("productsInCart");
   }
@@ -118,7 +119,7 @@ async function sendOrder(form) {
 
   axios
     .post(
-      "https://projekt-grupp9.herokuapp.com/order/add",
+      "https://localhost:8080/order/all",
       {
         date: new Date(),
         customer: {
