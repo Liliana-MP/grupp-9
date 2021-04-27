@@ -44,8 +44,8 @@ function createCustomerData(firstName, lastName, adress, zipcode) {
     <tbody>
     <tr class="table-active">
       <td scope="row">${firstName}</td>
-      <td>${lastName} SEK</td>
-      <td>${adress} SEK</td>
+      <td>${lastName}</td>
+      <td>${adress}</td>
       <td>
         <span>${zipcode}</span>
       </td>
