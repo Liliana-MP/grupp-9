@@ -98,7 +98,7 @@ async function sendOrder(form) {
 
   axios
     .post(
-      "https://projekt-grupp9.herokuapp.com/orders/add",
+      "https://projekt-grupp9.herokuapp.com/order/add",
       {
         date: new Date(),
         customer: {
