@@ -1,0 +1,9 @@
+@media print {
+  #print-btn {
+    display: none;
+  }
+}
+
+#print {
+  margin-top: 5rem;
+}

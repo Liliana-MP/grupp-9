@@ -78,7 +78,6 @@ function checkForm(form) {
     $alert.text("* Adressen måste ha mer än 2 bokstäver");
   } else {
     sendOrder(form);
-    localStorage.removeItem("productsInCart");
   }
 }
 
@@ -116,4 +115,20 @@ async function sendOrder(form) {
       else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
+}
+
+function saveInfo() {
+  let infoArray = [];
+  let $firstname = $("#fName").val();
+  let $lastname = $("#lName").val();
+  let $adress = $("#adrs").val();
+  let $zipCode = $("#zip").val();
+  let customer = {
+    firstName: $firstname,
+    lastName: $lastname,
+    adress: $adress,
+    zipCode: $zipCode,
+  };
+  infoArray.push(customer);
+  sessionStorage.setItem("Customer", JSON.stringify(infoArray));
 }
