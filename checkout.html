@@ -60,11 +60,11 @@
 
         <form id="right-nav-form" class="form-inline my-2 my-lg-0">
           <a
-          href="cart.html"
-          id="cart-btn"
-          class="btn btn-outline-primary my-2 my-sm-0"
-          >Varukorg</a
-        >
+            href="cart.html"
+            id="cart-btn"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            >Varukorg</a
+          >
         </form>
       </div>
     </nav>
@@ -94,13 +94,37 @@
           action="payment.html"
           onsubmit="checkForm(this); return false;"
         >
-          <input id="fName" type="text" placeholder="Förnamn" minlength="2" maxlength="50" />
+          <input
+            id="fName"
+            type="text"
+            placeholder="Förnamn"
+            minlength="2"
+            maxlength="50"
+          />
           <small>Förnamn</small> <br />
-          <input id="lName" type="text" placeholder="Efternamn" minlength="1" maxlength="50" />
+          <input
+            id="lName"
+            type="text"
+            placeholder="Efternamn"
+            minlength="1"
+            maxlength="50"
+          />
           <small>Efternamn</small> <br />
-          <input id="city" type="text" placeholder="Ort" minlength="2" maxlength="50" />
+          <input
+            id="city"
+            type="text"
+            placeholder="Ort"
+            minlength="2"
+            maxlength="50"
+          />
           <small>Ort</small> <br />
-          <input id="adrs" type="text" placeholder="Adress" minlength="2" maxlength="50" />
+          <input
+            id="adrs"
+            type="text"
+            placeholder="Adress"
+            minlength="2"
+            maxlength="50"
+          />
           <small>Adress</small> <br />
           <input
             id="zip"
@@ -112,11 +136,14 @@
           <small>Postkod</small> <br />
           <input id="email" type="text" placeholder="E-Mail" />
           <small>E-Mail</small> <br />
-          <input id="phoneNumber" type="tel" placeholder="Telefonnummer" minlength="6" maxlength="14" />
+          <input
+            id="phoneNumber"
+            type="tel"
+            placeholder="Telefonnummer"
+            minlength="6"
+            maxlength="14"
+          />
           <small>Telefonnummer</small> <br />
-          <!-- City ska fixas när vi har databas -->
-          <!-- <input id="city" type="text" placeholder="Ort" />
-          <small>Ort</small> -->
 
           <small class="font-weight-bold" id="alert"></small>
           <br />
