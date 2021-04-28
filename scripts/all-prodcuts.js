@@ -90,7 +90,7 @@ function setCategoryId() {
 }
 
 function renderProduct(id) {
-  window.location.replace("product.html");
+  window.location.href = "product.html";
   sessionStorage.setItem("productId", id);
 }
 
