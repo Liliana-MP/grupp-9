@@ -140,7 +140,7 @@ async function sendOrder(form) {
       { headers: { "Content-Type": "application/json" } }
     )
     .then((res) => {
-      if (res.data == "Order added") form.submit();
+      if (res.data == "Order tillagd") form.submit();
       else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
