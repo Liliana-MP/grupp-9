@@ -68,6 +68,8 @@ function checkForm(form) {
   let $zipCode = $("#zip").val();
   let $email = $("#email").val();
   let $phoneNumber = $("#phoneNumber").val();
+  var forbiddenC = new RegExp("/[<>{}()!+&%`");
+  const inputCheck = /[<>{}()!+&%";`]/;
 
   if (
     $firstname == "" ||
@@ -79,10 +81,21 @@ function checkForm(form) {
     $phoneNumber == ""
   ) {
     $alert.text("* Fyll i alla fälten");
-  } else if (isNaN($zipCode)) {
+  } else if (
+    inputCheck.test($firstname) ||
+    inputCheck.test($lastname) ||
+    inputCheck.test($adress) ||
+    inputCheck.test($city) ||
+    inputCheck.test($email)
+  ){
+    $alert.text("* Otillåtet tecken")
+  }
+  else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
   } else if (!isNaN($firstname)) {
+    // if(forbiddenC.test($firstname)){
     $alert.text("* Enbart bokstäver i förnamn fältet");
+  // }
   } else if (!isNaN($lastname)) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
   } else if ($adress.length <= 2) {
