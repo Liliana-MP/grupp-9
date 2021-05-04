@@ -93,7 +93,7 @@ function checkForm(form) {
   // }
   else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
-  } else if (!isNaN($firstname) && inputCheck($firstname)) {
+  } else if (!isNaN($firstname) || !inputCheck($firstname)) {
     $alert.text("* Enbart bokstäver i förnamn fältet");
   } else if (!isNaN($lastname)) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
@@ -135,7 +135,8 @@ async function sendOrder(form) {
 
   axios
     .post(
-      "https://projekt-grupp9.herokuapp.com/order/add",
+      // "https://projekt-grupp9.herokuapp.com/order/add",
+      "http://localhost:8080/order/add",
       {
         date: new Date(),
         customer: {
@@ -182,7 +183,8 @@ function saveInfo() {
 
 function validateInput(input) 
 { 
-const inputCheck = /[<>{}()!+&%";`]/;
+const inputCheck = /[<>{}()!+&%";*`']/g;
+// return inputCheck.test(input);
 if(inputCheck.test(input)) 
 { 
 return true;
