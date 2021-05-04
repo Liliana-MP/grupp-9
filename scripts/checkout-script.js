@@ -81,21 +81,20 @@ function checkForm(form) {
     $phoneNumber == ""
   ) {
     $alert.text("* Fyll i alla fälten");
-  } else if (
-    inputCheck.test($firstname) ||
-    inputCheck.test($lastname) ||
-    inputCheck.test($adress) ||
-    inputCheck.test($city) ||
-    inputCheck.test($email)
-  ){
-    $alert.text("* Otillåtet tecken")
-  }
+  } 
+  // else if (
+  //   inputCheck.test($firstname) ||
+  //   inputCheck.test($lastname) ||
+  //   inputCheck.test($adress) ||
+  //   inputCheck.test($city) ||
+  //   inputCheck.test($email)
+  // ){
+  //   $alert.text("* Otillåtet tecken")
+  // }
   else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
-  } else if (!isNaN($firstname)) {
-    // if(forbiddenC.test($firstname)){
+  } else if (!isNaN($firstname) && inputCheck($firstname)) {
     $alert.text("* Enbart bokstäver i förnamn fältet");
-  // }
   } else if (!isNaN($lastname)) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
   } else if ($adress.length <= 2) {
@@ -180,3 +179,13 @@ function saveInfo() {
   infoArray.push(customer);
   sessionStorage.setItem("Customer", JSON.stringify(infoArray));
 }
+
+function validateInput(input) 
+{ 
+const inputCheck = /[<>{}()!+&%";`]/;
+if(inputCheck.test(input)) 
+{ 
+return true;
+}
+else return false;
+}  
