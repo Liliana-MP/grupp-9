@@ -94,11 +94,30 @@
           action="payment.html"
           onsubmit="checkForm(this); return false;"
         >
-          <input id="fName" type="text" placeholder="Förnamn" />
+          <input
+            id="fName"
+            type="text"
+            placeholder="Förnamn"
+            minlength="2"
+            maxlength="50"
+          />
           <small>Förnamn</small> <br />
-          <input id="lName" type="text" placeholder="Efternamn" />
+          <input
+            id="lName"
+            type="text"
+            placeholder="Efternamn"
+            minlength="1"
+            maxlength="50"
+          />
           <small>Efternamn</small> <br />
-          <input id="adrs" type="text" placeholder="Adress" />
+
+          <input
+            id="adrs"
+            type="text"
+            placeholder="Adress"
+            minlength="2"
+            maxlength="50"
+          />
           <small>Adress</small> <br />
           <input
             id="zip"
@@ -107,10 +126,31 @@
             maxlength="5"
             placeholder="Postnummer"
           />
-          <small>Postkod</small> <br />
-          <!-- City ska fixas när vi har databas -->
-          <!-- <input id="city" type="text" placeholder="Ort" />
-          <small>Ort</small> -->
+          <small>Postnummer</small> <br />
+          <input
+            id="city"
+            type="text"
+            placeholder="Ort"
+            minlength="2"
+            maxlength="50"
+          />
+          <small>Ort</small> <br />
+          <input
+            id="email"
+            type="text"
+            placeholder="E-Mail"
+            minlength="3"
+            maxlength="50"
+          />
+          <small>E-Mail</small> <br />
+          <input
+            id="phoneNumber"
+            type="tel"
+            placeholder="Telefonnummer"
+            minlength="6"
+            maxlength="14"
+          />
+          <small>Telefonnummer</small> <br />
 
           <small class="font-weight-bold" id="alert"></small>
           <br />
@@ -119,6 +159,7 @@
             class="btn btn-outline-success"
             value="Beställ"
             id="btn-submit"
+            onclick="saveInfo()"
           />
         </form>
       </div>

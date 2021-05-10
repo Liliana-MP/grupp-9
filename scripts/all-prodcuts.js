@@ -4,7 +4,7 @@ var cartArray = JSON.parse(localStorage.getItem("productsInCart")) || [];
 const getCategoryId = sessionStorage.getItem("categoryId") || 0;
 
 function renderAllProducts() {
-  fetch("https://projekt-grupp9.herokuapp.com/product/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/product/all/active").then(function (
     response
   ) {
     if (response.status !== 200) {
@@ -28,7 +28,7 @@ function renderAllProducts() {
 }
 
 function fetchAllCategories() {
-  fetch("https://projekt-grupp9.herokuapp.com/category/all").then(function (
+  fetch("https://projekt-grupp9.herokuapp.com/category/all/active").then(function (
     response
   ) {
     if (response.status !== 200) {
@@ -90,7 +90,7 @@ function setCategoryId() {
 }
 
 function renderProduct(id) {
-  window.location.replace("product.html");
+  window.location.href = "product.html";
   sessionStorage.setItem("productId", id);
 }
 

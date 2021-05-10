@@ -16,10 +16,12 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+
     <!-- <script src="scripts/navbar-script.js"></script> -->
     <link rel="stylesheet" href="styling/spacelab.css" />
     <link rel="stylesheet" href="styling/navbar-style.css" />
     <link rel="stylesheet" href="styling/footer-style.css" />
+    <link rel="stylesheet" href="styling/print.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -67,9 +69,47 @@
       </div>
     </nav>
     <!-- Page content -->
-    <div class="content container">
-      <h1>Betalning</h1>
-      <h3>Tack för din beställning!</h3>
+    <div class="content container" id="print">
+      <h2>Beställnings bekräftelse</h2>
+
+      <br />
+      <table class="table table-hover" id="reciept">
+        <thead>
+          <tr>
+            <th scope="col">Produkt</th>
+            <th scope="col">Pris</th>
+            <th scope="col">Antal</th>
+          </tr>
+        </thead>
+      </table>
+      <br />
+      <div class="card border-primary mb-3" style="max-width: 20rem">
+        <div class="card-header">Total</div>
+        <div class="card-body" id="total-amount"></div>
+      </div>
+      <br />
+      <h2>Levereras till</h2>
+      <table class="table table-hover" id="customer-info">
+        <thead>
+          <tr>
+            <th scope="col">Förnamn</th>
+            <th scope="col">Efternamn</th>
+            <th scope="col">Adress</th>
+            <th scope="col">Postnummer</th>
+            <th scope="col">Ort</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Telefonnummer</th>
+          </tr>
+        </thead>
+      </table>
+      <button
+        class="btn btn-outline-success"
+        id="print-btn"
+        onclick="window.print()"
+        style="margin-top: 1rem"
+      >
+        Skriv ut
+      </button>
       <div>
         <br />
         <footer
@@ -146,5 +186,6 @@
         </footer>
       </div>
     </div>
+    <script src="scripts/reciept.js"></script>
   </body>
 </html>
