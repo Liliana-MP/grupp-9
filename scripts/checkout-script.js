@@ -104,6 +104,7 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
   let $lastname = $("#lName").val();
@@ -121,6 +122,7 @@ async function sendOrder(form) {
     })
   );
 
+  
   axios
     .post(
       "https://projekt-grupp9.herokuapp.com/order/add",
@@ -140,11 +142,28 @@ async function sendOrder(form) {
       { headers: { "Content-Type": "application/json" } }
     )
     .then((res) => {
-      if (res.data == "Order tillagd") form.submit();
+      if (res.data == "Order tillagd"){
+        sendEmail($firstname, $email, products, $adress, $zipCode, $city);
+        form.submit();
+      } 
       else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
 }
+
+function sendEmail(firstName, email, products, adress, zipCode, city) {
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "hakimlivsonline@gmail.com",
+    Password: "vvnowqalsopkvfar",
+    To: email,
+    From: "hakimlivsonline@gmail.com",
+    Subject: `Beställningsbekräftelse ${email}`,
+    Body: `${firstName} tack för din beställning.
+    <br/>  Levereras till: ${adress} ${zipCode} ${city}`
+  })
+}
+
 
 function saveInfo() {
   let infoArray = [];
