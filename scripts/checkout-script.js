@@ -99,19 +99,17 @@ function checkForm(form) {
 }
 
 function validateEmail(email) {
-  //var re = /^[^\s@]+@[^\s@]+$/;
   var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   return re.test(email);
 }
 
 function validateName(name) {
-  let regex = /^[a-zA-Z\-\'\ ]{2,30}$/;
+  let regex = /^[a-zåäöA-ZÅÄÖ\-\'\ ]{2,30}$/;
   return regex.test(name);
 }
 
 function validateAdress(adress) {
-  //let regex = /^[a-zA-Z]{2,30}+[\ ]$/;
-  let regex = /^[a-zåäöA-ZÅÄÖ ]{2,30}[ ][0-9]{1,4}[^.{}|^~[`%]$/;
+  let regex = /^[a-zåäöA-ZÅÄÖ ]{2,30}([ ][0-9]{0,4})?[^.{}|^~[`%]$/;
   return regex.test(adress);
 }
 
@@ -126,7 +124,8 @@ function validateCity(city) {
 }
 
 function validatePhoneNumber(phoneNumber) {
-  let regex = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+  let regex =
+    /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
   return regex.test(phoneNumber);
 }
 
