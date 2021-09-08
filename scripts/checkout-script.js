@@ -85,7 +85,7 @@ function checkForm(form) {
     $alert.text("* Enbart bokstäver i förnamn fältet");
   } else if (!validateName($lastname)) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
-  } else if ($adress.length <= 2) {
+  } else if (!validateAdress($adress)) {
     $alert.text("* Adressen måste ha mer än 2 bokstäver");
   } else if (!isNaN($city)) {
     $alert.text("* Enbart bokstäver i ort fältet");
@@ -105,12 +105,14 @@ function validateEmail(email) {
 }
 
 function validateName(name) {
-  let regex = /^[a-z]{2,30}+[-']+[^.]$/;
+  let regex = /^[a-zA-Z\-\'\ ]{2,30}$/;
   return regex.test(name);
 }
 
 function validateAdress(adress) {
-  let regex = /^[a-z]{2,30}+[-'\s]$/;
+  //let regex = /^[a-zA-Z]{2,30}+[\ ]$/;
+  let regex = /^[a-zåäöA-ZÅÄÖ ]{2,30}[ ][0-9]{1,4}[^.{}|^~[`%]$/;
+  return regex.test(adress);
 }
 
 async function sendOrder(form) {
