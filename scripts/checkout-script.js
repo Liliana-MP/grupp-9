@@ -79,20 +79,20 @@ function checkForm(form) {
     $phoneNumber == ""
   ) {
     $alert.text("* Fyll i alla fälten");
-  } else if (isNaN($zipCode)) {
-    $alert.text("* Enbart siffror i postnummer fältet");
+  } else if (!validateZipCode($zipCode)) {
+    $alert.text("* Felaktigt postnummer");
   } else if (!validateName($firstname)) {
-    $alert.text("* Enbart bokstäver i förnamn fältet");
+    $alert.text("* Felaktigt förnamn");
   } else if (!validateName($lastname)) {
-    $alert.text("* Enbart bokstäver i efternamn fältet");
+    $alert.text("* Felaktigt efternamn");
   } else if (!validateAdress($adress)) {
-    $alert.text("* Adressen måste ha mer än 2 bokstäver");
-  } else if (!isNaN($city)) {
-    $alert.text("* Enbart bokstäver i ort fältet");
+    $alert.text("* Felaktig adress");
+  } else if (!validateCity($city)) {
+    $alert.text("* Felaktig ort");
   } else if (!validateEmail($email)) {
     $alert.text("* Felaktig E-Mail adress");
-  } else if (isNaN($phoneNumber)) {
-    $alert.text("* Enbart siffror i telefonnummer fältet");
+  } else if (!validatePhoneNumber($phoneNumber)) {
+    $alert.text("* Felaktigt telefonnummer");
   } else {
     sendOrder(form);
   }
@@ -113,6 +113,21 @@ function validateAdress(adress) {
   //let regex = /^[a-zA-Z]{2,30}+[\ ]$/;
   let regex = /^[a-zåäöA-ZÅÄÖ ]{2,30}[ ][0-9]{1,4}[^.{}|^~[`%]$/;
   return regex.test(adress);
+}
+
+function validateZipCode(zipCode) {
+  let regex = /^[0-9]{5}$/;
+  return regex.test(zipCode);
+}
+
+function validateCity(city) {
+  let regex = /^[a-zåäöA-ZÅÄÖ]{2,30}$/;
+  return regex.test(city);
+}
+
+function validatePhoneNumber(phoneNumber) {
+  let regex = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+  return regex.test(phoneNumber);
 }
 
 async function sendOrder(form) {
