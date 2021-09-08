@@ -81,9 +81,9 @@ function checkForm(form) {
     $alert.text("* Fyll i alla fälten");
   } else if (isNaN($zipCode)) {
     $alert.text("* Enbart siffror i postnummer fältet");
-  } else if (!isNaN($firstname)) {
+  } else if (!validateName($firstname)) {
     $alert.text("* Enbart bokstäver i förnamn fältet");
-  } else if (!isNaN($lastname)) {
+  } else if (!validateName($lastname)) {
     $alert.text("* Enbart bokstäver i efternamn fältet");
   } else if ($adress.length <= 2) {
     $alert.text("* Adressen måste ha mer än 2 bokstäver");
@@ -104,6 +104,14 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+function validateName(name) {
+  let regex = /^[a-z]{2,30}+[-']+[^.]$/;
+  return regex.test(name);
+}
+
+function validateAdress(adress) {
+  let regex = /^[a-z]{2,30}+[-'\s]$/;
+}
 
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
@@ -122,7 +130,6 @@ async function sendOrder(form) {
     })
   );
 
-  
   axios
     .post(
       "https://projekt-grupp9.herokuapp.com/order/add",
@@ -142,11 +149,10 @@ async function sendOrder(form) {
       { headers: { "Content-Type": "application/json" } }
     )
     .then((res) => {
-      if (res.data == "Order tillagd"){
+      if (res.data == "Order tillagd") {
         sendEmail($firstname, $email, products, $adress, $zipCode, $city);
         form.submit();
-      } 
-      else $alert.text("* Något gick fel");
+      } else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
 }
@@ -160,10 +166,9 @@ function sendEmail(firstName, email, products, adress, zipCode, city) {
     From: "hakimlivsonline@gmail.com",
     Subject: `Beställningsbekräftelse ${email}`,
     Body: `${firstName} tack för din beställning.
-    <br/>  Levereras till: ${adress} ${zipCode} ${city}`
-  })
+    <br/>  Levereras till: ${adress} ${zipCode} ${city}`,
+  });
 }
-
 
 function saveInfo() {
   let infoArray = [];
