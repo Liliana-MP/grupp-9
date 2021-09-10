@@ -92,7 +92,7 @@ function checkForm(form) {
   } else if (!validateEmail($email)) {
     $alert.text("* Felaktig E-Mail adress");
   } else if (!validatePhoneNumber($phoneNumber)) {
-    $alert.text("* Felaktigt telefonnummer");
+    $alert.text("* Formatet ska vara 0701234567");
   } else {
     sendOrder(form);
   }
@@ -124,9 +124,7 @@ function validateCity(city) {
 }
 
 function validatePhoneNumber(phoneNumber) {
-  let regex =
-    /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-  let regex2 = /^\+?\d{9,12}$/;
+  let regex2 = /^\d{10}$/;
   return regex2.test(phoneNumber);
 }
 
