@@ -99,8 +99,8 @@ function checkForm(form) {
 }
 
 function validateEmail(email) {
-  var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  return re.test(email);
+  let regex = /^(?=[\w\.]+@([\w-]+\.)+[\w-]{2,4}).{3,30}$/;
+  return regex.test(email);
 }
 
 function validateName(name) {
@@ -126,8 +126,12 @@ function validateCity(city) {
 function validatePhoneNumber(phoneNumber) {
   let regex =
     /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-  return regex.test(phoneNumber);
+  let regex2 = /^\+?\d{9,12}$/;
+  return regex2.test(phoneNumber);
 }
+
+//+46765554662
+//0765554662
 
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
