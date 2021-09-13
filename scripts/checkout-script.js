@@ -79,30 +79,57 @@ function checkForm(form) {
     $phoneNumber == ""
   ) {
     $alert.text("* Fyll i alla fälten");
-  } else if (isNaN($zipCode)) {
-    $alert.text("* Enbart siffror i postnummer fältet");
-  } else if (!isNaN($firstname)) {
-    $alert.text("* Enbart bokstäver i förnamn fältet");
-  } else if (!isNaN($lastname)) {
-    $alert.text("* Enbart bokstäver i efternamn fältet");
-  } else if ($adress.length <= 2) {
-    $alert.text("* Adressen måste ha mer än 2 bokstäver");
-  } else if (!isNaN($city)) {
-    $alert.text("* Enbart bokstäver i ort fältet");
+  } else if (!validateZipCode($zipCode)) {
+    $alert.text("* Felaktigt postnummer");
+  } else if (!validateName($firstname)) {
+    $alert.text("* Felaktigt förnamn");
+  } else if (!validateName($lastname)) {
+    $alert.text("* Felaktigt efternamn");
+  } else if (!validateAdress($adress)) {
+    $alert.text("* Felaktig adress");
+  } else if (!validateCity($city)) {
+    $alert.text("* Felaktig ort");
   } else if (!validateEmail($email)) {
     $alert.text("* Felaktig E-Mail adress");
-  } else if (isNaN($phoneNumber)) {
-    $alert.text("* Enbart siffror i telefonnummer fältet");
+  } else if (!validatePhoneNumber($phoneNumber)) {
+    $alert.text("* Formatet ska vara 0701234567");
   } else {
     sendOrder(form);
   }
 }
 
 function validateEmail(email) {
-  //var re = /^[^\s@]+@[^\s@]+$/;
-  var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  return re.test(email);
+  let regex = /^(?=[\w\.]+@([\w-]+\.)+[\w-]{2,4}).{3,30}$/;
+  return regex.test(email);
 }
+
+function validateName(name) {
+  let regex = /^[a-zåäöA-ZÅÄÖ\-\'\ ]{2,30}$/;
+  return regex.test(name);
+}
+
+function validateAdress(adress) {
+  let regex = /^[a-zåäöA-ZÅÄÖ ]{2,30}([ ][0-9]{0,4})?[^.{}|^~[`%]$/;
+  return regex.test(adress);
+}
+
+function validateZipCode(zipCode) {
+  let regex = /^[0-9]{5}$/;
+  return regex.test(zipCode);
+}
+
+function validateCity(city) {
+  let regex = /^[a-zåäöA-ZÅÄÖ]{2,30}$/;
+  return regex.test(city);
+}
+
+function validatePhoneNumber(phoneNumber) {
+  let regex2 = /^\d{10}$/;
+  return regex2.test(phoneNumber);
+}
+
+//+46765554662
+//0765554662
 
 async function sendOrder(form) {
   let $firstname = $("#fName").val();
@@ -141,25 +168,25 @@ async function sendOrder(form) {
     )
     .then((res) => {
       if (res.data == "Order tillagd") {
-        //sendEmail($firstname, $email, products, $adress, $zipCode, $city);
+        sendEmail($firstname, $email, products, $adress, $zipCode, $city);
         form.submit();
       } else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
 }
 
-// function sendEmail(firstName, email, products, adress, zipCode, city) {
-//   Email.send({
-//     Host: "smtp.gmail.com",
-//     Username: "hakimlivsonline@gmail.com",
-//     Password: "vvnowqalsopkvfar",
-//     To: email,
-//     From: "hakimlivsonline@gmail.com",
-//     Subject: `Beställningsbekräftelse ${email}`,
-//     Body: `${firstName} tack för din beställning.
-//     <br/>  Levereras till: ${adress} ${zipCode} ${city}`
-//   })
-// }
+function sendEmail(firstName, email, products, adress, zipCode, city) {
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "hakimlivsonline@gmail.com",
+    Password: "vvnowqalsopkvfar",
+    To: email,
+    From: "hakimlivsonline@gmail.com",
+    Subject: `Beställningsbekräftelse ${email}`,
+    Body: `${firstName} tack för din beställning.
+    <br/>  Levereras till: ${adress} ${zipCode} ${city}`,
+  });
+}
 
 function saveInfo() {
   let infoArray = [];
