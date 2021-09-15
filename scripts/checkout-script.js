@@ -168,25 +168,25 @@ async function sendOrder(form) {
     )
     .then((res) => {
       if (res.data == "Order tillagd") {
-        sendEmail($firstname, $email, products, $adress, $zipCode, $city);
+        //sendEmail($firstname, $email, products, $adress, $zipCode, $city);
         form.submit();
       } else $alert.text("* Något gick fel");
     })
     .catch((err) => console.error(err));
 }
 
-function sendEmail(firstName, email, products, adress, zipCode, city) {
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: "hakimlivsonline@gmail.com",
-    Password: "vvnowqalsopkvfar",
-    To: email,
-    From: "hakimlivsonline@gmail.com",
-    Subject: `Beställningsbekräftelse ${email}`,
-    Body: `${firstName} tack för din beställning.
-    <br/>  Levereras till: ${adress} ${zipCode} ${city}`,
-  });
-}
+// function sendEmail(firstName, email, products, adress, zipCode, city) {
+//   Email.send({
+//     Host: "smtp.gmail.com",
+//     Username: "hakimlivsonline@gmail.com",
+//     Password: "vvnowqalsopkvfar",
+//     To: email,
+//     From: "hakimlivsonline@gmail.com",
+//     Subject: `Beställningsbekräftelse ${email}`,
+//     Body: `${firstName} tack för din beställning.
+//     <br/>  Levereras till: ${adress} ${zipCode} ${city}`,
+//   });
+// }
 
 function saveInfo() {
   let infoArray = [];
